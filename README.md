@@ -11,3 +11,7 @@ python manage.py migrate
 ```shell
 python manage.py runserver
 ```
+
+## Пример дизайна
+
+https://altusdv.ru/
