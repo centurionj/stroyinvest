@@ -3,6 +3,7 @@ venv/
 env/
 
 media/
+node_modules/
 
 # локальные настройки
 local_settings.py
