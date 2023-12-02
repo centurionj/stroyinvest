@@ -12,6 +12,11 @@ python manage.py migrate
 python manage.py runserver
 ```
 
+При именении фронта запускать команду
+```shell
+npm run watch
+```
+
 ## Пример дизайна
 
 https://altusdv.ru/
