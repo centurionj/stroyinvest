@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="{% static 'css/output.css' %}">
     <title>Стройинвест</title>
+    {% block head %}{% endblock head %}
 </head>
 <body>
 <div class="w-full bg-gray-1 flex items-center flex-col">
@@ -38,7 +39,7 @@
                 <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
             </svg>
         </div>
-        <nav class="rounded-[5px] flex gap-[10px] lg:relative absolute lg:top-0 top-[100px] lg:flex-row flex-col lg:w-auto w-[calc(100%-20px)] lg:p-0 p-[20px] lg:bg-[transparent] bg-blue1-70 lg:!flex hidden" id="js-header-menu">
+        <nav class="rounded-[5px] flex gap-[10px] lg:relative absolute lg:top-0 top-[100px] lg:flex-row flex-col lg:w-auto w-[calc(100%-20px)] lg:p-0 p-[20px] lg:bg-[transparent] bg-blue1-70 lg:!flex hidden z-50" id="js-header-menu">
             <a href="/" class="bg-white hover:bg-gray-1 px-[15px] py-[7px] rounded-[5px] lg:w-auto w-full" id="js-index">Главная</a>
             <a href="/products" class="bg-white hover:bg-gray-1 px-[15px] py-[7px] rounded-[5px] lg:w-auto w-full" id="js-products">Товары</a>
             <a href="/services" class="bg-white hover:bg-gray-1 px-[15px] py-[7px] rounded-[5px] lg:w-auto w-full" id="js-services">Услуги</a>
@@ -65,13 +66,13 @@
         </div>
         <div class="lg:w-[calc(100%-560px)] w-full">
             <nav class="flex flex-wrap w-full gap-[20px]">
-                <a href="/" class="text-white underline decoration-2">Главная</a>
-                <a href="/products" class="text-white underline decoration-2">Товары</a>
-                <a href="/services" class="text-white underline decoration-2">Услуги</a>
-                <a href="/news" class="text-white underline decoration-2">Новости</a>
-                <a href="/contacts" class="text-white underline decoration-2">Контакты</a>
-                <a href="/about-us" class="text-white underline decoration-2">О нас</a>
-                <a href="/documents" class="text-white underline decoration-2">Документы</a>
+                <a href="/" class="text-white underline decoration-1">Главная</a>
+                <a href="/products" class="text-white underline decoration-1">Товары</a>
+                <a href="/services" class="text-white underline decoration-1">Услуги</a>
+                <a href="/news" class="text-white underline decoration-1">Новости</a>
+                <a href="/contacts" class="text-white underline decoration-1">Контакты</a>
+                <a href="/about-us" class="text-white underline decoration-1">О нас</a>
+                <a href="/documents" class="text-white underline decoration-1">Документы</a>
             </nav>
         </div>
         <div class="flex flex-col lg:w-[260px] w-full gap-[20px]">
