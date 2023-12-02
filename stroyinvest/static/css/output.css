@@ -955,6 +955,9 @@ video {
 .pb-\[4px\] {
   padding-bottom: 4px;
 }
+.pb-\[20px\] {
+  padding-bottom: 20px;
+}
 .text-justify {
   text-align: justify;
 }
@@ -1007,6 +1010,10 @@ video {
 .text-3xl {
   font-size: 1.875rem;
   line-height: 2.25rem;
+}
+.text-xs {
+  font-size: 0.75rem;
+  line-height: 1rem;
 }
 .font-bold {
   font-weight: 700;
@@ -1102,6 +1109,10 @@ video {
 .hover\:bg-zinc-300:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(212 212 216 / var(--tw-bg-opacity));
+}
+
+.hover\:underline:hover {
+  text-decoration-line: underline;
 }
 
 .hover\:shadow-lg:hover {
