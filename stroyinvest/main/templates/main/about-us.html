@@ -1,0 +1,110 @@
+{% extends "main/base.html" %}
+{% load static %}
+
+{% block content %}
+<main>
+    <section class="w-full flex justify-center bg-gray-1 mb-[30px]">
+        <div class="container py-[20px]">
+            <nav class="text-sm font-semibold" aria-label="Breadcrumb">
+                <ol class="list-none p-0 inline-flex">
+                    <li class="flex items-center">
+                        <a href="/" class="text-gray-500">Главная</a>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor" class="text-blue1 ml-[3px] mr-[2px]" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+                        </svg>
+                    </li>
+                    <li class="flex items-center">
+                        <span class="text-gray-700">О нас</span>
+                    </li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+
+    <section class="w-full flex justify-center mb-[30px]">
+        <div class="container">
+            <p class="mb-3">
+                ООО «Альтус» (от лат. altus - высокий) создавалось в 2005 г. как современное коммерческое предприятие,
+                способное гибко реагировать на требования рынка и эффективно работать как в мелко-, так и в крупнооптовом
+                сегментах рынка нефтепродуктов. Так как на момент создания учредители общества уже имели многолетний
+                опыт работы в таких сегментах, то синергия этих, во многом различных бизнес-моделей, стала ключом
+                к решению этой задачи.
+            </p>
+            <p class="mb-3">
+                С момента создания компания неукоснительно придерживается основных принципов работы:
+            </p>
+            <ol class="mb-3">
+                <li>1. поставка нефтепродуктов наилучшего качества;</li>
+                <li>2. строгое выполнение своих обязательств и налаживание долгосрочных связей с контрагентами;</li>
+                <li>3. реакция на вызовы рынка быстрее и эффективнее конкурентов.</li>
+            </ol>
+            <p class="mb-3">
+                В крупнооптовом сегменте ООО «Альтус» поставляет нефтепродукты ж/д транспортом потребителям
+                Хабаровского, Приморского краев, ЕАО, Сахалинской и Амурской областей, Республики Саха. Компания
+                аккредитована на на «Санкт-Петербургской Товарно-сырьевой Бирже» (spimex.com) с 2010г. Наши поставщики
+                - крупнейшие нефтяные компании России. Альтус активно сотрудничает с основными региональными
+                поставщиками нефтепродуктов - дочерними обществами нефтяных компаний: ОАО «РН-Востокнефтепродукт»
+                и АО «ННК-Хабаровскнефтепродукт». Прямые контракты с производителями нефтепродуктов это гарантия
+                постоянного наличия топлива высочайшего качества.
+            </p>
+            <p class="mb-3">
+                За годы работы нашими клиентами стали:
+            </p>
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-4 mb-3">
+                <div class="w-full flex items-center justify-center">
+                    <img class="w-full h-auto grayscale hover:grayscale-0 transition"
+                         src="https://yt3.googleusercontent.com/ytc/APkrFKZFw0G0ohM5mNGGkeQ1l6q6XhHhfBe0XFH52c9W=s900-c-k-c0x00ffffff-no-rj" alt="Fogstream">
+                </div>
+                <div class="w-full flex items-center justify-center">
+                    <img class="w-full h-auto grayscale hover:grayscale-0 transition"
+                         src="http://khabexpo.ru/upload/iblock/419/419697018a90b0b18e5eb730d1225e73.jpg" alt="Rasa - контора">
+                </div>
+                <div class="w-full flex items-center justify-center">
+                    <img class="w-full h-auto grayscale hover:grayscale-0 transition"
+                         src="https://yt3.googleusercontent.com/ytc/APkrFKZFw0G0ohM5mNGGkeQ1l6q6XhHhfBe0XFH52c9W=s900-c-k-c0x00ffffff-no-rj" alt="Fogstream">
+                </div>
+                <div class="w-full flex items-center justify-center">
+                    <img class="w-full h-auto grayscale hover:grayscale-0 transition"
+                         src="http://khabexpo.ru/upload/iblock/419/419697018a90b0b18e5eb730d1225e73.jpg" alt="Rasa - контора">
+                </div>
+                <div class="w-full flex items-center justify-center">
+                    <img class="w-full h-auto grayscale hover:grayscale-0 transition"
+                         src="https://yt3.googleusercontent.com/ytc/APkrFKZFw0G0ohM5mNGGkeQ1l6q6XhHhfBe0XFH52c9W=s900-c-k-c0x00ffffff-no-rj" alt="Fogstream">
+                </div>
+                <div class="w-full flex items-center justify-center">
+                    <img class="w-full h-auto grayscale hover:grayscale-0 transition"
+                         src="http://khabexpo.ru/upload/iblock/419/419697018a90b0b18e5eb730d1225e73.jpg" alt="Rasa - контора">
+                </div>
+                <div class="w-full flex items-center justify-center">
+                    <img class="w-full h-auto grayscale hover:grayscale-0 transition"
+                         src="https://yt3.googleusercontent.com/ytc/APkrFKZFw0G0ohM5mNGGkeQ1l6q6XhHhfBe0XFH52c9W=s900-c-k-c0x00ffffff-no-rj" alt="Fogstream">
+                </div>
+                <div class="w-full flex items-center justify-center">
+                    <img class="w-full h-auto grayscale hover:grayscale-0 transition"
+                         src="http://khabexpo.ru/upload/iblock/419/419697018a90b0b18e5eb730d1225e73.jpg" alt="Rasa - контора">
+                </div>
+            </div>
+            <p class="mb-3">
+                В сегменте мелкого опта компания занимается поставками товаров и услуг по следующим направлениям:
+            </p>
+            <ol class="mb-3">
+                <li>1. дизельное топливо для различных типов двигателей;</li>
+                <li>2. керосин для отопления и печей;</li>
+                <li>3. бензин для различных типов двигателей;</li>
+                <li>4. битум для дорожного строительства;</li>
+                <li>5. услуги доставки топлива и заправки техники.</li>
+            </ol>
+            <p class="mb-3">
+                Для бесперебойных поставок ООО “Альтус” располагает парком бензовозов и топливозаправщиков различной
+                вместимости, и штатом опытных водителей-экспедиторов. Компания активно применяет в своей работе
+                современные информационные и управленческие технологии, развивает новые направления, укрепляет
+                существующие и налаживает новые коммерческие связи.
+            </p>
+            <p class="mb-3">
+                Сегодня, оглядываясь на пройденный компанией путь, мы с уверенность говорим что цели, поставленные при
+                ее создании, успешно выполняются; принципы работы компании остаются незыблемыми.
+            </p>
+        </div>
+    </section>
+</main>
+{% endblock %}
