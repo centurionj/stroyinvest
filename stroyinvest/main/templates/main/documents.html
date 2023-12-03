@@ -1,0 +1,104 @@
+{% extends "main/base.html" %}
+{% load static %}
+
+{% block content %}
+<main>
+    <section class="w-full flex justify-center bg-gray-1 mb-[30px]">
+        <div class="container py-[20px]">
+            <nav class="text-sm font-semibold" aria-label="Breadcrumb">
+                <ol class="list-none p-0 inline-flex">
+                    <li class="flex items-center">
+                        <a href="/" class="text-gray-500">Главная</a>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor" class="text-blue1 ml-[3px] mr-[2px]" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+                        </svg>
+                    </li>
+                    <li class="flex items-center">
+                        <span class="text-gray-700">Документы</span>
+                    </li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+
+    <section class="w-full flex justify-center mb-[30px]">
+        <div class="container">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-4 rounded shadow-md flex flex-col justify-between cursor-pointer"
+                     data-image-src="https://std-upload.storage.yandexcloud.net/iblock/323/32376d1852d688005c720b1097d9eba6.jpg"
+                     data-title="Название Документа" onclick="openDocumentModal(this)">
+                    <div class="grow flex items-center">
+                        <img src="https://std-upload.storage.yandexcloud.net/iblock/323/32376d1852d688005c720b1097d9eba6.jpg" alt="Document"
+                             class="w-full h-auto object-contain mb-4 rounded-md"
+                             data-toggle="modal" data-target="#documentModal">
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Название Документа</h3>
+                </div>
+                <div class="bg-white p-4 rounded shadow-md flex flex-col justify-between cursor-pointer"
+                     data-image-src="https://avatars.mds.yandex.net/i?id=ed68c6df0f23b7ecf93cb9122fb4ec0aeaf92c9c-8376176-images-thumbs&n=13"
+                     data-title="Название Документа" onclick="openDocumentModal(this)">
+                    <div class="grow flex items-center">
+                        <img src="https://avatars.mds.yandex.net/i?id=ed68c6df0f23b7ecf93cb9122fb4ec0aeaf92c9c-8376176-images-thumbs&n=13" alt="Document"
+                             class="w-full h-auto object-contain mb-4 rounded-md"
+                             data-toggle="modal" data-target="#documentModal">
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Название Документа</h3>
+                </div>
+                <div class="bg-white p-4 rounded shadow-md flex flex-col justify-between cursor-pointer"
+                     data-image-src="https://media.b-stock.ru/gallery/941378.jpeg"
+                     data-title="Название Документа" onclick="openDocumentModal(this)">
+                    <div class="grow flex items-center">
+                        <img src="https://media.b-stock.ru/gallery/941378.jpeg" alt="Document"
+                             class="w-full h-auto object-contain mb-4 rounded-md"
+                             data-toggle="modal" data-target="#documentModal">
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Название Документа</h3>
+                </div>
+                <div class="bg-white p-4 rounded shadow-md flex flex-col justify-between cursor-pointer"
+                     data-image-src="https://m4.by/images/goods/105/diplom-a4-118076.jpg"
+                     data-title="Название Документа" onclick="openDocumentModal(this)">
+                    <div class="grow flex items-center">
+                        <img src="https://m4.by/images/goods/105/diplom-a4-118076.jpg" alt="Document"
+                             class="w-full h-auto object-contain mb-4 rounded-md"
+                             data-toggle="modal" data-target="#documentModal">
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Название Документа</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="fixed inset-0 bg-gray-900 z-50 bg-opacity-50 flex justify-center items-center hidden" id="documentModal">
+        <div id="modalOverlay" class="absolute inset-0 bg-black opacity-25"></div>
+        <div class="bg-white p-6 rounded shadow-md w-full max-w-xl relative">
+            <h2 class="text-xl font-semibold mb-4">Просмотр Документа: <span id="documentModalTitle">Название Документа</span></h2>
+            <img src="https://m4.by/images/goods/105/diplom-a4-118076.jpg" alt="Document"
+                 class="w-full h-auto object-contain mb-4 rounded-md" id="documentModalImage">
+            <button class="bg-blue1 hover:bg-blue1-hover text-white px-4 py-2 rounded" id="modalCloseBtn">Закрыть</button>
+        </div>
+    </div>
+
+    <script>
+        const documentModal = document.querySelector('#documentModal');
+        const modalOverlay = document.querySelector('#modalOverlay');
+        const documentModalTitle = document.querySelector('#documentModalTitle');
+        const documentModalImage = document.querySelector('#documentModalImage');
+        const modalCloseBtn = document.querySelector('#modalCloseBtn');
+
+        const openDocumentModal = (obj) => {
+            const { imageSrc, title } = obj.dataset;
+
+            documentModal.classList.remove('hidden');
+            documentModalTitle.innerHTML = title;
+            documentModalImage.setAttribute('src', imageSrc);
+        };
+
+        modalOverlay.addEventListener('click', () => {
+            documentModal.classList.add('hidden');
+        })
+        modalCloseBtn.addEventListener('click', () => {
+            documentModal.classList.add('hidden');
+        })
+    </script>
+</main>
+{% endblock %}
