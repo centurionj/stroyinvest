@@ -9,3 +9,6 @@ def documents(request):
 
 def contacts(request):
     return render(request, 'main/contacts.html')
+
+def about_us(request):
+    return render(request, 'main/about-us.html')
