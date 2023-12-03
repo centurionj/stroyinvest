@@ -1,10 +1,124 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "main/base.html" %}
+{% load static %}
 
-</body>
-</html>
+{% block content %}
+<main>
+    <section class="w-full flex justify-center bg-gray-1 mb-[30px]">
+        <div class="container py-[20px]">
+            <nav class="text-sm font-semibold" aria-label="Breadcrumb">
+                <ol class="list-none p-0 inline-flex">
+                    <li class="flex items-center">
+                        <a href="/" class="text-gray-500">Главная</a>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor" class="text-blue1 ml-[3px] mr-[2px]" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+                        </svg>
+                    </li>
+                    <li class="flex items-center">
+                        <span class="text-gray-700">Контакты</span>
+                    </li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+
+    <section class="w-full flex justify-center mb-[30px]">
+        <div class="container">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white p-4 rounded shadow-md">
+                    <h2 class="text-2xl font-semibold mb-4">Контактная информация</h2>
+                    <p class="flex gap-[10px] items-center mb-3">
+                        <span class="block w-[50px] h-[50px] rounded-[5px] bg-blue1 flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="text-white" viewBox="0 0 16 16">
+                                <path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10"/>
+                                <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4m0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+                            </svg>
+                        </span>
+                        <span>Лермонтова, 52, Хабаровск, 680000</span>
+                    </p>
+                    <p class="flex gap-[10px] items-center mb-3">
+                        <span class="block w-[50px] h-[50px] rounded-[5px] bg-blue1 flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="text-white" viewBox="0 0 16 16">
+                                <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+                            </svg>
+                        </span>
+                        <span><a href="tel:+79999999999">+7-999-999-99-99</a></span>
+                    </p>
+                    <p class="flex gap-[10px] items-center mb-3">
+                        <span class="block w-[50px] h-[50px] rounded-[5px] bg-blue1 flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="text-white" viewBox="0 0 16 16">
+                                <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/>
+                            </svg>
+                        </span>
+                        <span><a href="mailto:mail@your_email@mail.ru">your_email@mail.ru</a></span>
+                    </p>
+                    <p class="flex gap-[10px] items-center">
+                        <span class="block w-[50px] h-[50px] rounded-[5px] bg-blue1 flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="text-white" viewBox="0 0 16 16">
+                                <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z"/>
+                                <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0"/>
+                            </svg>
+                        </span>
+                        <span>Пн. – Пт.: с 9:00 до 18:00<br> Сб. - Вс.: выходные</span>
+                    </p>
+                </div>
+
+                <div class="bg-white p-4 rounded shadow-md">
+                    <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Aab5164234b0f3ead365bcc169fe33ffd1e89d4cb3d4c814d24393230fef2fdc9&amp;source=constructor"
+                            width="100%" height="100%" frameborder="0"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="w-full flex justify-center mb-[30px]">
+        <div class="container">
+            <div class="rounded-[5px] bg-blue1-10 h-[100px] w-full flex items-center justify-between px-[20px]">
+                <h4 class="text-[28px] text-white">Консультация по услугам</h4>
+                <button id="openModal" class="bg-blue1 text-white px-4 py-2 rounded-[5px] focus:outline-none">
+                    Задать&nbsp;вопрос
+                </button>
+            </div>
+            <div id="myModal" class="hidden fixed inset-0 overflow-y-auto z-50">
+                <div class="flex items-center justify-center min-h-screen">
+                    <div id="modalOverlay" class="absolute inset-0 bg-black opacity-25"></div>
+                    <div class="bg-white p-8 rounded-[5px] shadow-md relative w-[450px]">
+                        <span class="absolute top-0 right-[10px] cursor-pointer text-2xl" id="js-close-modal-button">&times;</span>
+
+                        <h2 class="text-2xl font-semibold mb-6">Форма обратной связи</h2>
+
+                        <form action="#" method="post">
+                            <div class="mb-4">
+                                <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Имя</label>
+                                <input type="text" id="name" name="name" placeholder="Ваше имя" required
+                                       class="w-full px-3 py-2 border rounded focus:outline-none focus:border-blue-500">
+                            </div>
+                            <div class="mb-4">
+                                <label for="phone" class="block text-gray-700 text-sm font-bold mb-2">Телефон</label>
+                                <input type="tel" id="phone" name="phone" placeholder="Ваш телефон" required
+                                       class="w-full px-3 py-2 border rounded focus:outline-none focus:border-blue-500">
+                            </div>
+                            <div class="mb-4">
+                                <label for="email" class="block text-gray-700 text-sm font-bold mb-2">E-mail</label>
+                                <input type="email" id="email" name="email" placeholder="example@example.com"
+                                       class="w-full px-3 py-2 border rounded focus:outline-none focus:border-blue-500">
+                            </div>
+                            <div class="mb-6">
+                                <label for="message" class="block text-gray-700 text-sm font-bold mb-2">Сообщение</label>
+                                <textarea id="message" name="message" rows="4" placeholder="Ваше сообщение" required
+                                          class="w-full px-3 py-2 border rounded focus:outline-none focus:border-blue-500"></textarea>
+                            </div>
+                            <div>
+                                <button type="submit" class="w-full bg-blue1 text-white p-3 rounded focus:outline-none">
+                                    Отправить
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <script src="{% static 'scripts/indexModal.js' %}"></script>
+        </div>
+    </section>
+</main>
+{% endblock %}

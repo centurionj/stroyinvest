@@ -3,5 +3,5 @@
 @import 'tailwindcss/utilities';
 
 .container {
-    @apply px-[10px];
+    @apply px-[20px];
 }
