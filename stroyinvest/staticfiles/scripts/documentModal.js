@@ -3,6 +3,7 @@ const modalOverlay = document.querySelector('#modalOverlay');
 const documentModalTitle = document.querySelector('#documentModalTitle');
 const documentModalImage = document.querySelector('#documentModalImage');
 const modalCloseBtn = document.querySelector('#modalCloseBtn');
+const documentDownload = document.querySelector('#documentDownload');
 
 const openDocumentModal = (obj) => {
     const { imageSrc, title } = obj.dataset;
@@ -10,6 +11,7 @@ const openDocumentModal = (obj) => {
     documentModal.classList.remove('hidden');
     documentModalTitle.innerHTML = title;
     documentModalImage.setAttribute('src', imageSrc);
+    documentDownload.setAttribute('href', imageSrc);
 };
 
 modalOverlay.addEventListener('click', () => {
