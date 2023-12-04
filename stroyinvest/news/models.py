@@ -13,6 +13,7 @@ class News(models.Model):
     class Meta:
         verbose_name_plural = 'Новости'
         verbose_name = 'Новость'
+        ordering = ordering = ['-date']
 
     def save(self, *args, **kwargs):
         if not self.date:

@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from attendance.models import Icon, Service
+from service.models import Icon, Service
 
 
 @admin.register(Icon)

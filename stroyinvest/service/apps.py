@@ -1,7 +1,7 @@
 from django.apps import AppConfig
 
 
-class AttendanceConfig(AppConfig):
+class ServiceConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'attendance'
+    name = 'service'
     verbose_name = 'Услуги'

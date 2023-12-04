@@ -3,7 +3,7 @@ const activeSelectors = ['!bg-blue1', 'hover:!bg-blue1-hover', 'text-white'];
 const navSelectorsEnums = {
     index: '#js-index',
     products: '#js-products',
-    services: '#js-services',
+    service: '#js-service',
     news: '#js-news',
     contacts: '#js-contacts',
     'about-us': '#js-about-us',
@@ -13,7 +13,7 @@ const navSelectorsEnums = {
 const linksEnums = {
     '/': 'index',
     '/products': 'products',
-    '/services': 'services',
+    '/service': 'service',
     '/news': 'news',
     '/contacts': 'contacts',
     '/about-us': 'about-us',

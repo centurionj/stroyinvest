@@ -40,9 +40,9 @@
             </svg>
         </div>
         <nav class="rounded-[5px] flex gap-[10px] lg:relative absolute lg:top-0 top-[100px] lg:flex-row flex-col lg:w-auto w-[calc(100%-20px)] lg:p-0 p-[20px] lg:bg-[transparent] bg-blue1-70 lg:!flex hidden z-50" id="js-header-menu">
-            <a href="/" class="bg-white hover:bg-gray-1 px-[15px] py-[7px] rounded-[5px] lg:w-auto w-full" id="js-index">Главная</a>
+            <a href="{% url 'index' %}" class="bg-white hover:bg-gray-1 px-[15px] py-[7px] rounded-[5px] lg:w-auto w-full" id="js-index">Главная</a>
             <a href="/products" class="bg-white hover:bg-gray-1 px-[15px] py-[7px] rounded-[5px] lg:w-auto w-full" id="js-products">Товары</a>
-            <a href="/services" class="bg-white hover:bg-gray-1 px-[15px] py-[7px] rounded-[5px] lg:w-auto w-full" id="js-services">Услуги</a>
+            <a href="/service" class="bg-white hover:bg-gray-1 px-[15px] py-[7px] rounded-[5px] lg:w-auto w-full" id="js-services">Услуги</a>
             <a href="/news" class="bg-white hover:bg-gray-1 px-[15px] py-[7px] rounded-[5px] lg:w-auto w-full" id="js-news">Новости</a>
             <a href="/contacts" class="bg-white hover:bg-gray-1 px-[15px] py-[7px] rounded-[5px] lg:w-auto w-full" id="js-contacts">Контакты</a>
             <a href="/about-us" class="bg-white hover:bg-gray-1 px-[15px] py-[7px] rounded-[5px] lg:w-auto w-full" id="js-about-us">О нас</a>
@@ -66,9 +66,9 @@
         </div>
         <div class="lg:w-[calc(100%-560px)] w-full">
             <nav class="flex flex-wrap w-full gap-[20px]">
-                <a href="/" class="text-white underline decoration-1">Главная</a>
+                <a href="{% url 'index' %}" class="text-white underline decoration-1">Главная</a>
                 <a href="/products" class="text-white underline decoration-1">Товары</a>
-                <a href="/services" class="text-white underline decoration-1">Услуги</a>
+                <a href="{% url 'service' %}" class="text-white underline decoration-1">Услуги</a>
                 <a href="/news" class="text-white underline decoration-1">Новости</a>
                 <a href="/contacts" class="text-white underline decoration-1">Контакты</a>
                 <a href="/about-us" class="text-white underline decoration-1">О нас</a>
