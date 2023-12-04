@@ -2,7 +2,7 @@ from django.db import models
 from autoslug import AutoSlugField
 
 class Icon(models.Model):
-    icon = models.ImageField('Фото услуги', upload_to='icons')
+    icon = models.TextField('Иконка услуги')
 
     class Meta:
         verbose_name_plural = 'Иконки'
