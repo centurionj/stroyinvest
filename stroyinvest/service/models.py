@@ -1,12 +1,17 @@
 from django.db import models
 from autoslug import AutoSlugField
 
+
 class Icon(models.Model):
+    title = models.CharField('Название иконки', max_length=20)
     icon = models.TextField('Иконка услуги')
 
     class Meta:
         verbose_name_plural = 'Иконки'
         verbose_name = 'Иконка'
+
+    def __str__(self):
+        return self.title
 
 
 class Service(models.Model):
