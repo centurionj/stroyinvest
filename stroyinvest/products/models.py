@@ -3,7 +3,7 @@ from django.db import models
 
 from autoslug import AutoSlugField
 
-from .enums import ProductStatus
+from .enums import ProductStatus, ProductColour
 from service.models import Service
 
 
@@ -53,6 +53,12 @@ class Product(models.Model):
     category = models.ForeignKey(ProductCategory, on_delete=models.CASCADE, related_name='brands')
     service = models.ForeignKey(Service, on_delete=models.CASCADE, related_name='services')
     slug = AutoSlugField(populate_from='title', unique=True, editable=False)
+    colour = models.CharField(
+        max_length=50,
+        choices=ProductColour.choices,
+        verbose_name="Цвет статуса",
+        null=True, blank=True
+    )
 
     class Meta:
         verbose_name_plural = 'Товары'
@@ -60,3 +66,11 @@ class Product(models.Model):
 
     def __str__(self):
         return self.title
+
+    def save(self, *args, **kwargs):
+        if self.status == ProductStatus.IN_STOCK:
+            self.colour = ProductColour.GREEN
+        else:
+            self.colour = ProductColour.BLUE
+
+        super(Product, self).save(*args, **kwargs)

@@ -80,7 +80,7 @@
                 </div>
                 <div>
                     <h1 class="text-[25px] font-semibold mb-3">{{product.title}}</h1>
-                    <span class="inline-block px-2 py-1 mb-3 bg-green-500 text-sm text-white rounded-[5px]">{{product.get_status_display}}</span>
+                    <span class="inline-block px-2 py-1 mb-3 bg-{{product.colour}}-500 text-sm text-white rounded-[5px]">{{product.get_status_display}}</span>
 <!--                    <span class="inline-block px-2 py-1 mb-2 bg-blue-500 text-sm text-white rounded-[5px]">Под заказ</span>-->
                     <ul class="list-disc pl-4 mb-4">
                         <li>Цена: {{product.price}} руб. за литр</li>
@@ -93,7 +93,7 @@
                 </div>
             </div>
             <p class="mb-[30px] lg:mt-0 mt-4">
-                {{product.description}}
+                {{product.description | safe}}
             </p>
         </div>
     </div>

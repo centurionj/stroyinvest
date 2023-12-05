@@ -1,6 +1,9 @@
 from django.contrib import admin
 from django.utils.html import format_html
 from django.utils.safestring import mark_safe
+from django.db import models
+
+from ckeditor.widgets import CKEditorWidget
 
 from service.models import Icon, Service
 
@@ -20,6 +23,11 @@ class ServiceAdmin(admin.ModelAdmin):
     list_display = ('display_icon', 'title', )
     fields = ['photo', 'photo_preview', 'icon', 'display_icon', 'title', 'description', ]
     readonly_fields = ['display_icon', 'photo_preview']
+
+
+    formfield_overrides = {
+        models.TextField: {'widget': CKEditorWidget},
+    }
 
     def display_icon(self, obj):
         return format_html(f'{obj.icon.icon}')
