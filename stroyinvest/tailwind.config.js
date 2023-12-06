@@ -18,8 +18,8 @@ module.exports = {
           2: '#cccccc',
         },
         white: '#fff',
-        black: '#000'
-      }
+        black: '#000',
+      },
     },
   },
   plugins: [],

@@ -31,9 +31,9 @@
                          alt="Service" class="w-full lg:!w-[200px] !h-[200px] object-cover rounded-md">
                     <div class="pb-[4px]">
                         <h2 class="text-xl font-semibold mb-2">{{service.title}}</h2>
-                        <p class="text-gray-500 mb-4">
+                        <div class="text-gray-500 mb-4">
                             {{service.description | safe}}
-                        </p>
+                        </div>
                         <a class="bg-blue1 hover:bg-blue1-hover text-white px-4 py-2 rounded"
                            href="{% url 'service-detail' service_slug=service.slug %}">Подробнее</a>
                     </div>

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "postcss static/css/styles.css -o static/main/css/output.css --watch"
+    "watch": "postcss static/main/css/styles.css -o static/main/css/output.css --watch"
   },
   "keywords": [],
   "author": "",

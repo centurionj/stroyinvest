@@ -41,59 +41,8 @@
 
     <section class="w-full flex justify-center mb-[30px]">
         <div class="container">
-            <div class="rounded-[5px] bg-blue1-10 h-[80px] w-full flex items-center justify-between px-[20px] gap-[20px]">
-<!--                <button id="openModal" class="bg-blue1 text-white px-4 py-2 rounded-[5px] focus:outline-none">-->
-<!--                    Заказать&nbsp;услугу-->
-<!--                </button>-->
-<!--                <p class="text-[14px] text-white">-->
-<!--                    Оформите заявку на сайте, мы свяжемся с вами в ближайшее время и ответим на все интересующие вопросы.-->
-<!--                </p>-->
+            <div class="rounded-[5px] bg-blue1-10 h-[20px] w-full flex items-center justify-between px-[20px] gap-[20px]">
             </div>
-            <div id="myModal" class="hidden fixed inset-0 overflow-y-auto z-50">
-                <div class="flex items-center justify-center min-h-screen">
-                    <div id="modalOverlay" class="absolute inset-0 bg-black opacity-25"></div>
-                    <div class="bg-white p-8 rounded-[5px] shadow-md relative w-[450px]">
-                        <span class="absolute top-0 right-[10px] cursor-pointer text-2xl" id="js-close-modal-button">&times;</span>
-
-                        <h2 class="text-2xl font-semibold mb-6">Заказать услугу</h2>
-
-                        <form action="#" method="post">
-                            <div class="mb-4">
-                                <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Имя</label>
-                                <input type="text" id="name" name="name" placeholder="Ваше имя" required
-                                       class="w-full px-3 py-2 border rounded focus:outline-none focus:border-blue-500">
-                            </div>
-                            <div class="mb-4">
-                                <label for="phone" class="block text-gray-700 text-sm font-bold mb-2">Телефон</label>
-                                <input type="tel" id="phone" name="phone" placeholder="Ваш телефон" required
-                                       class="w-full px-3 py-2 border rounded focus:outline-none focus:border-blue-500">
-                            </div>
-                            <div class="mb-4">
-                                <label for="email" class="block text-gray-700 text-sm font-bold mb-2">E-mail</label>
-                                <input type="email" id="email" name="email" placeholder="example@example.com"
-                                       class="w-full px-3 py-2 border rounded focus:outline-none focus:border-blue-500">
-                            </div>
-                            <div class="mb-4">
-                                <label for="service" class="block text-gray-700 text-sm font-bold mb-2">Услуга</label>
-                                <input type="text" id="service" name="service" value="Название услуги" disabled
-                                       class="w-full px-3 py-2 text-gray-500 border rounded focus:outline-none focus:border-blue-500">
-                            </div>
-                            <div class="mb-6">
-                                <label for="message" class="block text-gray-700 text-sm font-bold mb-2">Сообщение</label>
-                                <textarea id="message" name="message" rows="4" placeholder="Ваше сообщение" required
-                                          class="w-full px-3 py-2 border rounded focus:outline-none focus:border-blue-500"></textarea>
-                            </div>
-                            <div>
-                                <button type="submit" class="w-full bg-blue1 text-white p-3 rounded focus:outline-none">
-                                    Отправить
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-
-            <script src="{% static 'main/scripts/indexModal.js' %}"></script>
         </div>
     </section>
 
@@ -107,10 +56,6 @@
                     <img src="{{product.photo.url}}" alt="Another Product" class="w-full h-32 object-cover mb-4">
                     <h2 class="text-lg font-semibold mb-2">{{product.title}}</h2>
                     <span class="inline-block px-2 py-1 mb-2 bg-{{product.colour}}-500 text-sm text-white rounded-[5px]">{{product.get_status_display}}</span>
-<!--                    <p class="text-lg font-bold mb-2">Цена за литр: {{product.price}} руб.</p>-->
-<!--                    {% if product.old_price %}-->
-<!--                    <p class="text-sm text-gray-500 line-through mb-2">Цена без скидки: {{product.old_price}} руб.</p>-->
-                    {% endif %}
                 </a>
                 {% endfor %}
                 {% else %}

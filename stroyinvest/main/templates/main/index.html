@@ -85,63 +85,24 @@
     </script>
 
     <section class="w-full flex justify-center">
-        <div class="container my-[30px] flex justify-between lg:flex-row flex-col gap-[20px]">
+        <div class="container my-[30px] grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-[30px]">
              {% for service in services %}
-            <div class="lg:w-[calc(100%/3-40px)] w-full h-[200px] bg-blue1 p-[20px] rounded-[5px]">
-                <h4 class="uppercase text-white border-b-[1px] border-b-white">
-                    {{service.icon.icon | safe}} {{service.title}}
-                </h4>
+            <div class="w-full h-[200px] p-[20px] rounded-[5px] bg-blue1-10 flex flex-col">
+                <div class="flex items-center gap-[10px] mb-[10px]">
+                    <div class="text-white p-[10px] rounded-full bg-blue1">{{service.icon.icon | safe}}</div>
+                    <h4 class="uppercase text-white">{{service.title}}</h4>
+                </div>
                 <p class="text-white line-clamp-6">
                     {{service.description|safe|striptags|slice:":30"}}...
                 </p>
+                <div class="grow flex items-end justify-end">
+                    <a href="{% url 'service-detail' service_slug=service.slug %}"
+                       class="text-white px-[15px] py-[7px] border-white border-[1px] rounded-[17px] hover:text-blue1 hover:bg-white transition">Смотреть</a>
+                </div>
             </div>
             {% endfor %}
-<!--            <div class="lg:w-[calc(100%/3-40px)] w-full h-[200px] bg-blue1 p-[20px] rounded-[5px]">-->
-<!--                <h4 class="uppercase text-white border-b-[1px] border-b-white">-->
-<!--                    Топливо евро<br>-->
-<!--                    для спецтехники-->
-<!--                </h4>-->
-<!--                <p class="text-white line-clamp-6">-->
-<!--                    Диз. топливо для спецтехники, реф. секций, буровых установок и тепловозов. Бензин для автомобилей и катеров-->
-<!--                </p>-->
-<!--            </div>-->
-<!--            <div class="lg:w-[calc(100%/3-40px)] w-full h-[200px] bg-blue1 p-[20px] rounded-[5px]">-->
-<!--                <h4 class="uppercase text-white border-b-[1px] border-b-white">-->
-<!--                    Бензин АИ-92,<br>-->
-<!--                    АИ-95-->
-<!--                </h4>-->
-<!--                <p class="text-white line-clamp-6">-->
-<!--                    Оптовые поставка Бензина АИ-92 и АИ-95 по городу от 400 литров. Цены ниже от заправочных. Надежно, выгодно и быстро-->
-<!--                </p>-->
-<!--            </div>-->
         </div>
     </section>
-
-<!--    <section class="w-full flex justify-center">-->
-<!--        <div class="container my-[30px]">-->
-<!--            <h3 class="text-[30px]">Предоставляемые услуги</h3>-->
-<!--            <p class="mt-[10px]">-->
-<!--                ООО "Альтус" - оптовые поставки нефтепродуктов с 2005 года. Безупречная надежность поставок, идеальное-->
-<!--                качество товара, оперативность в решении любых задач. Поставки светлых и темных нефтепродуктов-->
-<!--                автомобильным и железнодорожным транспортом. Услуги по доставке и заправке.-->
-<!--            </p>-->
-<!--            <div class="flex flex-wrap gap-[20px] justify-start items-start mt-[30px]">-->
-<!--                {% for service in services %}-->
-<!--                <div class="w-full lg:w-[calc(100%/3-40px)] flex gap-[10px]">-->
-<!--                    <div class="w-[50px] h-[50px] bg-blue1 rounded-[5px] flex items-center justify-center">-->
-<!--                       {{service.icon.icon | safe}}-->
-<!--                    </div>-->
-<!--                    <div class="w-[calc(100%-60px)]">-->
-<!--                        <a href="{% url 'service-detail' service_slug=service.slug %}" class="text-[18px] underline decoration-1 text-blue1">{{service.title}}</a>-->
-<!--                        <p class="text-[13px]">-->
-<!--                            {{service.description|safe|striptags|slice:":30"}}...-->
-<!--                        </p>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                {% endfor %}-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </section>-->
 
     <section class="w-full flex justify-center mb-[30px]">
         <div class="container">
