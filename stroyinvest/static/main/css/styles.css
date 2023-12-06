@@ -3,5 +3,9 @@
 @import 'tailwindcss/utilities';
 
 .container {
-    @apply px-[20px];
+    @apply px-[30px];
+}
+
+.gradient-1 {
+    background: linear-gradient(45deg, rgba(58,103,124,1) 0%, rgba(146,193,215,1) 47%, rgba(146,193,215,1) 63%, rgba(58,103,124,1) 100%);
 }
