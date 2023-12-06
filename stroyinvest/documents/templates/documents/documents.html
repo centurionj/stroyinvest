@@ -45,7 +45,7 @@
         <div class="bg-white p-6 rounded shadow-md w-full max-w-xl relative">
             <h2 class="text-xl font-semibold mb-4">Просмотр Документа: <span id="documentModalTitle">Название Документа</span></h2>
             <div class="grow flex items-center justify-center">
-                <img src="{% static 'images/file.svg' %}" alt="Иконка файла" class="w-[100px] h-auto object-contain mb-4 rounded-md" >
+                <img src="{% static 'main/images/file.svg' %}" alt="Иконка файла" class="w-[100px] h-auto object-contain mb-4 rounded-md" >
             </div>
             <div class="flex gap-[5px] justify-end">
                 <a class="bg-blue1 hover:bg-blue1-hover text-white px-4 py-2 rounded" id="documentDownload" href="" download>Скачать</a>
@@ -54,6 +54,6 @@
         </div>
     </div>
 
-    <script src="{% static 'scripts/documentModal.js' %}"></script>
+    <script src="{% static 'main/scripts/documentModal.js' %}"></script>
 </main>
 {% endblock %}

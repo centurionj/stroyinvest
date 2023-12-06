@@ -1,0 +1,44 @@
+version: "3"
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    depends_on:
+      - postgres
+    environment:
+      - TZ=Asia/Vladivostok
+    env_file:
+      - .env
+
+  postgres:
+    image: postgres:latest
+    environment:
+      - POSTGRES_DB=stroyinvest
+      - POSTGRES_USER=stroyinvest
+      - POSTGRES_PASSWORD=stroyinvest
+    ports:
+      - "15432:5432"
+    volumes:
+      - pg_data:/var/lib/postgresql/data/
+
+  nginx:
+    build:
+      context: .
+      dockerfile: ./stroyinvest/nginx/Dockerfile.nginx
+    restart: always
+    ports:
+      - "80:80"
+    volumes:
+      - static_volume:/app/static/
+      - media_volume:/app/media/
+    depends_on:
+      - web
+
+volumes:
+  pg_data:
+  static_volume:
+  media_volume:

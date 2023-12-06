@@ -1,0 +1,64 @@
+version: "3.11"
+
+services:
+  web:
+    build: .
+    volumes:
+      - static_volume:/app/static/
+      - media_volume:/app/media/
+    ports:
+      - "8000:8000"
+    env_file:
+      - ./.env
+    depends_on:
+      - db
+#      - redis
+
+
+  postgres:
+    image: postgres:latest
+    environment:
+      - POSTGRES_DB=stroyinvest
+      - POSTGRES_USER=stroyinvest
+      - POSTGRES_PASSWORD=stroyinvest
+    ports:
+      - "15432:5432"
+    volumes:
+      - pg_data:/var/lib/postgresql/data/
+
+
+#  redis:
+#    image: redis:latest
+#    ports:
+#      - "6379:6379"
+
+
+  nginx:
+      build:
+        context: .
+        dockerfile: ./nginx/Dockerfile
+      restart: always
+      volumes:
+        - static_volume:/app/static/
+        - media_volume:/app/media/
+      depends_on:
+        - web
+
+  nginx_proxy_pass:
+    image: 'jc21/nginx-proxy-manager:latest'
+    restart: unless-stopped
+    ports:
+      - '80:80'
+      - '81:81'
+      - '443:443'
+    volumes:
+      - nginx_data:/data
+      - letsencrypt_data:/etc/letsencrypt
+
+
+volumes:
+  pg_data:
+  static_volume:
+  media_volume:
+  nginx_data:
+  letsencrypt_data:
