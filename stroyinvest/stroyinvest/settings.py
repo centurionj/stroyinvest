@@ -153,3 +153,14 @@ EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
 SERVER_EMAIL = EMAIL_HOST_USER
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
+# Настройки для сессии
+
+SESSION_ENGINE = 'django.contrib.sessions.backends.signed_cookies'
+SESSION_COOKIE_NAME = 'my_session'
+SESSION_COOKIE_AGE = 30 * 24 * 3600  # для админки
+SESSION_EXPIRE_SECONDS = 3600  # для обычных пользователей
+SESSION_COOKIE_SECURE = False  # для использования HTTPS (True)
+SESSION_COOKIE_HTTPONLY = True
+SESSION_SAVE_EVERY_REQUEST = True
+SESSION_COOKIE_SAMESITE = 'Lax'
