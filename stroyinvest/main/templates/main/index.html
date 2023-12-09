@@ -8,52 +8,31 @@
 
 {% block content %}
 <main>
-    <div class="swiper">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide !h-[400px] bg-blue1 bg-cover bg-no-repeat bg-center bg-[url('https://avatars.mds.yandex.net/i?id=03694a97191e52a98acdd08f9f851cec42be2c0b-10662832-images-thumbs&n=13')]">
+    <div class="swiper h-[600px] lg:h-[400px]">
+        <div class="swiper-wrapper h-full">
+            <div class="swiper-slide !h-full bg-blue1 bg-cover bg-no-repeat bg-center bg-[url('https://avatars.mds.yandex.net/i?id=03694a97191e52a98acdd08f9f851cec42be2c0b-10662832-images-thumbs&n=13')]">
                 <div class="w-full h-full flex items-center justify-center">
                     <div class="container flex items-center gap-[20px] h-full">
-                        <div class="w-[50%] flex flex-col gap-[20px]">
+                        <div class="w-full lg:w-[50%] flex flex-col gap-[20px]">
                             <h3 class="text-[36px] text-white">Сохраните тепло</h3>
-                            <p class="text-[16px] text-white">
-                                Доверьте нам поставки жидкого топлива для котлов и печей. Температурный режим в помещениях и технологии.
-                                Высокая теплоотдача и чистые форсунки с керосином гарантированного качества. Входящий НДС.
-                            </p>
-                            <a href="/link-to-article" class="text-[14px] bg-blue1 hover:bg-blue1-hover text-white rounded-[5px] px-[15px] py-[7px] uppercase w-fit">
-                                Керосин
-                            </a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="swiper-slide !h-[400px] bg-blue1 bg-cover bg-no-repeat bg-center bg-[url('https://avatars.mds.yandex.net/i?id=03694a97191e52a98acdd08f9f851cec42be2c0b-10662832-images-thumbs&n=13')]">
+            <div class="swiper-slide !h-full bg-blue1 bg-cover bg-no-repeat bg-center bg-[url('https://avatars.mds.yandex.net/i?id=03694a97191e52a98acdd08f9f851cec42be2c0b-10662832-images-thumbs&n=13')]">
                 <div class="w-full h-full flex items-center justify-center">
                     <div class="container flex items-center gap-[20px] h-full">
-                        <div class="w-[50%] flex flex-col gap-[20px]">
+                        <div class="w-full lg:w-[50%] flex flex-col gap-[20px]">
                             <h3 class="text-[36px] text-white">Сохраните тепло</h3>
-                            <p class="text-[16px] text-white">
-                                Доверьте нам поставки жидкого топлива для котлов и печей. Температурный режим в помещениях и технологии.
-                                Высокая теплоотдача и чистые форсунки с керосином гарантированного качества. Входящий НДС.
-                            </p>
-                            <a href="/link-to-article" class="text-[14px] bg-blue1 hover:bg-blue1-hover text-white rounded-[5px] px-[15px] py-[7px] uppercase w-fit">
-                                Керосин
-                            </a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="swiper-slide !h-[400px] bg-blue1 bg-cover bg-no-repeat bg-center bg-[url('https://avatars.mds.yandex.net/i?id=03694a97191e52a98acdd08f9f851cec42be2c0b-10662832-images-thumbs&n=13')]">
+            <div class="swiper-slide !h-full bg-blue1 bg-cover bg-no-repeat bg-center bg-[url('https://avatars.mds.yandex.net/i?id=03694a97191e52a98acdd08f9f851cec42be2c0b-10662832-images-thumbs&n=13')]">
                 <div class="w-full h-full flex items-center justify-center">
                     <div class="container flex items-center gap-[20px] h-full">
-                        <div class="w-[50%] flex flex-col gap-[20px]">
+                        <div class="w-full lg:w-[50%] flex flex-col gap-[20px]">
                             <h3 class="text-[36px] text-white">Сохраните тепло</h3>
-                            <p class="text-[16px] text-white">
-                                Доверьте нам поставки жидкого топлива для котлов и печей. Температурный режим в помещениях и технологии.
-                                Высокая теплоотдача и чистые форсунки с керосином гарантированного качества. Входящий НДС.
-                            </p>
-                            <a href="/link-to-article" class="text-[14px] bg-blue1 hover:bg-blue1-hover text-white rounded-[5px] px-[15px] py-[7px] uppercase w-fit">
-                                Керосин
-                            </a>
                         </div>
                     </div>
                 </div>
@@ -106,8 +85,8 @@
 
     <section class="w-full flex justify-center mb-[30px]">
         <div class="container">
-            <div class="rounded-[5px] bg-blue1-10 h-[100px] w-full flex items-center justify-between px-[20px]">
-                <h4 class="text-[28px] text-white">Консультация по услугам</h4>
+            <div class="rounded-[5px] bg-blue1-10 h-auto lg:h-[100px] w-full flex lg:flex-row flex-col items-center justify-between p-[20px] gap-[20px]">
+                <h4 class="text-[28px] text-white text-center">Консультация по услугам</h4>
                 <button id="openModal" class="bg-blue1 text-white px-4 py-2 rounded-[5px] focus:outline-none">
                     Задать&nbsp;вопрос
                 </button>
