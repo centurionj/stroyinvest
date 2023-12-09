@@ -87,6 +87,7 @@
                         <h2 class="text-2xl font-semibold mb-6">Форма обратной связи</h2>
 
                         <form action="#" method="post">
+                            {% csrf_token %}
                             <div class="mb-4">
                                 <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Имя</label>
                                 <input type="text" id="name" name="name" placeholder="Ваше имя" required
