@@ -32,12 +32,11 @@
             <h3 class="text-3xl font-semibold mb-8">{{service.title}}</h3>
             <p class="text-gray-500 mb-4 text-justify">
                 <img src="{{service.photo.url}}"
-                     alt="Название Услуги" class="w-[200px] h-[200px] object-cover mb-4 ml-7 rounded-md float-right">
+                     alt="Название Услуги" class="w-full lg:w-[200px] h-auto lg:h-[200px] object-cover mb-4 ml-7 rounded-md float-right">
                 {{service.description | safe}}
             </p>
         </div>
     </section>
-
 
     <section class="w-full flex justify-center mb-[30px]">
         <div class="container">

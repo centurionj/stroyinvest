@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="{% static 'main/css/output.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Стройинвест</title>
     {% block head %}{% endblock head %}
 </head>
@@ -40,19 +41,13 @@
             <img alt="logo" src="{% static 'main/images/logo.jpg' %}" class="h-[80px] rounded-[5px]">
             <span class="text-[20px]">Стройинвест</span>
         </a>
-<!--        <div class="lg:hidden bg-blue1 hover:bg-blue1-hover p-[10px] rounded-[5px] cursor-pointer select-none" id="js-header-burger">-->
-<!--            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="text-white" viewBox="0 0 16 16">-->
-<!--                <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>-->
-<!--            </svg>-->
-<!--        </div>-->
-        <nav class="rounded-[5px] flex gap-[10px] relative top-0 flex-row w-auto p-0 z-50" id="js-header-menu">
+        <nav class="rounded-[5px] flex gap-[10px] relative top-0 flex-row w-auto p-0 z-50 flex-wrap justify-center" id="js-header-menu">
             <a href="{% url 'index' %}" class="bg-white hover:bg-gray-1 px-[15px] py-[7px] rounded-[5px] w-auto" id="js-index">Главная</a>
             <a href="/products" class="bg-white hover:bg-gray-1 px-[15px] py-[7px] rounded-[5px] w-auto" id="js-products">Товары</a>
             <a href="/service" class="bg-white hover:bg-gray-1 px-[15px] py-[7px] rounded-[5px] w-auto" id="js-services">Услуги</a>
             <a href="/news" class="bg-white hover:bg-gray-1 px-[15px] py-[7px] rounded-[5px] w-auto" id="js-news">Новости</a>
             <a href="/contacts" class="bg-white hover:bg-gray-1 px-[15px] py-[7px] rounded-[5px] w-auto" id="js-contacts">Контакты</a>
             <a href="/about-us" class="bg-white hover:bg-gray-1 px-[15px] py-[7px] rounded-[5px] w-auto" id="js-about-us">О нас</a>
-<!--            <a href="/documents" class="bg-white hover:bg-gray-1 px-[15px] py-[7px] rounded-[5px] w-auto" id="js-documents">Документы</a>-->
         </nav>
     </header>
 </div>
@@ -70,7 +65,7 @@
             <span class="text-[14px] text-white">© {% now "Y" %} ООО "Стройинвест"</span>
             <span class="text-[14px] text-white">680038, г. Хабаровск, ул. Лермонтова, 52, оф. 19</span>
         </div>
-        <div class="flex flex-col lg:w-[calc(50%-10px)] w-full gap-[20px] lg:items-start items-center">
+        <div class="flex flex-col lg:w-auto w-full gap-[20px] lg:items-start items-center">
             <div class="flex gap-[5px] items-center">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="text-white" viewBox="0 0 16 16">
                     <path d="M2 2a2 2 0 0 0-2 2v8.01A2 2 0 0 0 2 14h5.5a.5.5 0 0 0 0-1H2a1 1 0 0 1-.966-.741l5.64-3.471L8 9.583l7-4.2V8.5a.5.5 0 0 0 1 0V4a2 2 0 0 0-2-2zm3.708 6.208L1 11.105V5.383zM1 4.217V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v.217l-7 4.2z"/>
