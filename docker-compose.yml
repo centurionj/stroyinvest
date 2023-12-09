@@ -14,6 +14,9 @@ services:
       - TZ=Asia/Vladivostok
     env_file:
       - .env
+    volumes:
+      - static_volume:/app/static/
+      - media_volume:/app/media/
 
   postgres:
     image: postgres:latest

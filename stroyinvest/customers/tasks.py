@@ -1,24 +1,25 @@
-from celery import shared_task
-
 from django.core.mail import send_mail
 from django.conf import settings
 
+from celery import shared_task
+
+from customers.models import Question
+
 @shared_task
-def send_passport_task(full_name, username, password, email):
+def send_question_task(question_id):
     """
     Отправка сообщения о заданном вопросе на сайте.
     """
+    question_instance = Question.objects.get(pk=question_id)
 
-    user_subject = f'Добро пожаловать в Невада Групп!'
+    user_subject = 'Обратная связь'
     user_message = (
-        f'{full_name}, здравствуй! \n'
-        f'Вам предоставлены доступы в сервисы нашей компании.\n\n'
-        f'Телеграм бот: https://t.me/mark_tusovchikBot\n'
-        f'Система логирования и учета времени: https://nevada-frontend.213-171-10-35.nip.io/login\n\n'
-        f'Логин для входа в систему логирования: {username}\n'
-        f'Пароль: {password}'
+        f'{question_instance.message}\n\n'
+        f'Имя отправителя: {question_instance.name}\n'
+        f'Телефон отправителя: {question_instance.phone}\n'
+        f'Почта отправителя: {question_instance.email}'
     )
-    recipient_list = [email]
+    recipient_list = [settings.EMAIL_HOST_USER]
 
     send_mail(
         user_subject,
