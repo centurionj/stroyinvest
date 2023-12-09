@@ -6,10 +6,4 @@ from .models import Question
 class QuestionSerializer(serializers.ModelSerializer):
     class Meta:
         model = Question
-        fields = (
-            'id',
-            'name',
-            'phone',
-            'email',
-            'message',
-        )
+        fields = ('__all__')
