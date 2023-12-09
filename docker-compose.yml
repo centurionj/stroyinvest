@@ -9,6 +9,7 @@ services:
       - "8000:8000"
     depends_on:
       - postgres
+      - redis
     environment:
       - TZ=Asia/Vladivostok
     env_file:
@@ -24,6 +25,11 @@ services:
       - "15432:5432"
     volumes:
       - pg_data:/var/lib/postgresql/data/
+
+  redis:
+    image: redis:latest
+    ports:
+      - "6379:6379"
 
   nginx:
     build:

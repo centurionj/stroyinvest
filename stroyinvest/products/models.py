@@ -7,15 +7,15 @@ from .enums import ProductStatus, ProductColour
 from service.models import Service
 
 
-class Brand(models.Model):
-    title = models.CharField('Название брэнда', max_length=55)
-
-    class Meta:
-        verbose_name_plural = 'Брэнды'
-        verbose_name = 'Брэнд'
-
-    def __str__(self):
-        return self.title
+# class Brand(models.Model):
+#     title = models.CharField('Название брэнда', max_length=55)
+#
+#     class Meta:
+#         verbose_name_plural = 'Брэнды'
+#         verbose_name = 'Брэнд'
+#
+#     def __str__(self):
+#         return self.title
 
 
 class ProductCategory(models.Model):
@@ -40,17 +40,17 @@ class Product(models.Model):
         verbose_name="Статус товара",
         null=True, blank=True
     )
-    price = models.DecimalField('Цена', max_digits=10, decimal_places=2, validators=[MinValueValidator(0)])
-    old_price = models.DecimalField(
-        'Старая цена',
-        max_digits=10,
-        decimal_places=2,
-        validators=[MinValueValidator(0)],
-        null=True, blank=True
-    )
-    articul = models.CharField('Артикул', max_length=255)
-    brand = models.ForeignKey(Brand, on_delete=models.CASCADE, related_name='brands')
-    category = models.ForeignKey(ProductCategory, on_delete=models.CASCADE, related_name='brands')
+    # price = models.DecimalField('Цена', max_digits=10, decimal_places=2, validators=[MinValueValidator(0)])
+    # old_price = models.DecimalField(
+    #     'Старая цена',
+    #     max_digits=10,
+    #     decimal_places=2,
+    #     validators=[MinValueValidator(0)],
+    #     null=True, blank=True
+    # )
+    # articul = models.CharField('Артикул', max_length=255)
+    # brand = models.ForeignKey(Brand, on_delete=models.CASCADE, related_name='brands')
+    category = models.ForeignKey(ProductCategory, on_delete=models.CASCADE, related_name='category')
     service = models.ForeignKey(Service, on_delete=models.CASCADE, related_name='services')
     slug = AutoSlugField(populate_from='title', unique=True, editable=False)
     colour = models.CharField(

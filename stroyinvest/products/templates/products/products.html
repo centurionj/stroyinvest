@@ -28,10 +28,10 @@
                     <div class="flex-shrink-0">
                         <span class="font-semibold">Тип товара:</span>
                         <div class="space-y-2 mt-[5px]">
-                            {% for product in object_list %}
+                            {% for category in categories %}
                             <label class="flex items-center">
                                 <input type="checkbox" class="form-checkbox text-blue-500" name="productTypes" value="{{product.id}}">
-                                <span class="ml-2 select-none cursor-pointer">{{product.category}}</span>
+                                <span class="ml-2 select-none cursor-pointer">{{category}}</span>
                             </label>
                             {% endfor %}
                         </div>
@@ -63,10 +63,10 @@
                         <img src="{{product.photo.url}}" alt="Another Product" class="w-full h-32 object-cover mb-4">
                         <h2 class="text-lg font-semibold mb-2">{{product.title}}</h2>
                         <span class="inline-block px-2 py-1 mb-2 bg-{{product.colour}}-500 text-sm text-white rounded-[5px]">{{product.get_status_display}}</span>
-                        <p class="text-lg font-bold mb-2">Цена за литр: {{product.price}} руб.</p>
-                        {% if product.old_price %}
-                        <p class="text-sm text-gray-500 line-through mb-2">Цена без скидки: {{product.old_price}} руб.</p>
-                        {% endif %}
+<!--                        <p class="text-lg font-bold mb-2">Цена за литр: {{product.price}} руб.</p>-->
+<!--                        {% if product.old_price %}-->
+<!--                        <p class="text-sm text-gray-500 line-through mb-2">Цена без скидки: {{product.old_price}} руб.</p>-->
+<!--                        {% endif %}-->
                     </a>
                     {% endfor %}
                 </div>

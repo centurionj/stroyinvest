@@ -4,12 +4,12 @@ from django.utils.safestring import mark_safe
 
 from ckeditor.widgets import CKEditorWidget
 
-from products.models import Brand, ProductCategory, Product
+# from products.models import Brand, ProductCategory, Product
+from products.models import ProductCategory, Product
 
-
-@admin.register(Brand)
-class BrandAdmin(admin.ModelAdmin):
-    list_display = ('title',)
+# @admin.register(Brand)
+# class BrandAdmin(admin.ModelAdmin):
+#     list_display = ('title',)
 
 
 @admin.register(ProductCategory)
@@ -19,17 +19,18 @@ class ProductCategoryAdmin(admin.ModelAdmin):
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
-    list_display = ('title', 'status', 'price', 'articul', 'brand')
+    # list_display = ('title', 'status', 'price', 'articul', 'brand')
+    list_display = ('title', 'status', 'category')
     fields = [
         'photo',
         'photo_preview',
         'title',
         'description',
         'status',
-        'price',
-        'old_price',
-        'articul',
-        'brand',
+        # 'price',
+        # 'old_price',
+        # 'articul',
+        # 'brand',
         'category',
         'service',
     ]
