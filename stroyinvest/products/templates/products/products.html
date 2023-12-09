@@ -30,8 +30,8 @@
                         <div class="space-y-2 mt-[5px]">
                             {% for category in categories %}
                             <label class="flex items-center">
-                                <input type="checkbox" class="form-checkbox text-blue-500" name="productTypes" value="{{product.id}}">
-                                <span class="ml-2 select-none cursor-pointer">{{category}}</span>
+                                <input type="checkbox" class="form-checkbox text-blue-500" name="productTypes" value="{{ category.slug }}">
+                                <span class="ml-2 select-none cursor-pointer">{{ category.title }}</span>
                             </label>
                             {% endfor %}
                         </div>
@@ -44,18 +44,18 @@
             </form>
 
             <div class="w-full lg:w-[calc(100%-200px)] flex flex-col gap-[20px]">
-                <div class="lg:mt-0 mt-[10px]">
-                    <span class="font-semibold">Сортировка по:</span>
-                    <label>
-                        <select id="sortSelect" name="sort" class="border p-2 rounded">
-                            <option value="name-asc">Наименованию (А - Я)</option>
-                            <option value="name-desc">Наименованию (Я - А)</option>
-                            <option value="popularity">Популярности</option>
-                            <option value="price-low">Цене (сначала дешёвые)</option>
-                            <option value="price-high">Цене (сначала дорогие)</option>
-                        </select>
-                    </label>
-                </div>
+<!--                <div class="lg:mt-0 mt-[10px]">-->
+<!--                    <span class="font-semibold">Сортировка по:</span>-->
+<!--                    <label>-->
+<!--                        <select id="sortSelect" name="sort" class="border p-2 rounded">-->
+<!--                            <option value="name-asc">Наименованию (А - Я)</option>-->
+<!--                            <option value="name-desc">Наименованию (Я - А)</option>-->
+<!--                            <option value="popularity">Популярности</option>-->
+<!--                            <option value="price-low">Цене (сначала дешёвые)</option>-->
+<!--                            <option value="price-high">Цене (сначала дорогие)</option>-->
+<!--                        </select>-->
+<!--                    </label>-->
+<!--                </div>-->
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
                     {% for product in object_list %}

@@ -10,6 +10,16 @@ class ProductsListView(ListView):
     model = Product
     template_name = 'products/products.html'
 
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        category_slug = self.request.GET.get('category')
+
+        if category_slug:
+            category = get_object_or_404(ProductCategory, slug=category_slug)
+            queryset = queryset.filter(category=category)
+
+        return queryset
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['categories'] = ProductCategory.objects.all()
