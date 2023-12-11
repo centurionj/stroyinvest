@@ -28,6 +28,10 @@ module.exports = {
     'hover:!bg-blue1-hover',
     'text-white',
     'hidden',
+    'bg-blue-500',
+    'bg-green-500',
+    'border-[1px]',
+    'border-red-600',
   ]
 }
 
