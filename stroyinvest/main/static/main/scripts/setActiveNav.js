@@ -1,4 +1,4 @@
-const activeSelectors = ['!bg-blue1', 'hover:!bg-blue1-hover', 'text-white'];
+const activeSelectors = ['!bg-blue1', 'hover:!bg-blue1-hover', 'text-white', 'border-[1px]'];
 
 const navSelectorsEnums = {
     index: '#js-index',
