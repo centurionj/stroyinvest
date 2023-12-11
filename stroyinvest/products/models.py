@@ -51,7 +51,7 @@ class Product(models.Model):
     # articul = models.CharField('Артикул', max_length=255)
     # brand = models.ForeignKey(Brand, on_delete=models.CASCADE, related_name='brands')
     category = models.ForeignKey(ProductCategory, on_delete=models.CASCADE, related_name='category')
-    service = models.ForeignKey(Service, on_delete=models.CASCADE, related_name='services')
+    services = models.ManyToManyField(Service, related_name='products')
     slug = AutoSlugField(populate_from='title', unique=True, editable=False)
     colour = models.CharField(
         max_length=50,

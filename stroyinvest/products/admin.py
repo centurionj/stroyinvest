@@ -32,9 +32,10 @@ class ProductAdmin(admin.ModelAdmin):
         # 'articul',
         # 'brand',
         'category',
-        'service',
+        'services',
     ]
-    search_fields = ('title', 'articul', 'brand')
+    # search_fields = ('title', 'articul', 'brand')
+    search_fields = ('title', 'articul')
     readonly_fields = ['photo_preview']
 
     formfield_overrides = {

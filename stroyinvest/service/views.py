@@ -24,5 +24,5 @@ class ServiceDetailView(DetailView):
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super(ServiceDetailView, self).get_context_data(**kwargs)
         service = self.object
-        context['products'] = Product.objects.filter(service=service)
+        context['products'] = Product.objects.filter(services=service)
         return context
