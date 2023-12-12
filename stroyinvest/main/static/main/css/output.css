@@ -570,6 +570,9 @@ video {
 .mb-\[10px\] {
   margin-bottom: 10px;
 }
+.mb-\[20px\] {
+  margin-bottom: 20px;
+}
 .mb-\[30px\] {
   margin-bottom: 30px;
 }
@@ -596,15 +599,6 @@ video {
 }
 .mt-\[7px\] {
   margin-top: 7px;
-}
-.mb-\[20px\] {
-  margin-bottom: 20px;
-}
-.line-clamp-3 {
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
 }
 .line-clamp-2 {
   overflow: hidden;
