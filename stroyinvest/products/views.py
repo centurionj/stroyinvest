@@ -12,11 +12,12 @@ class ProductsListView(ListView):
 
     def get_queryset(self):
         queryset = super().get_queryset()
-        category_slug = self.request.GET.get('category')
+        category_ids = self.request.GET.get('productTypes')
 
-        if category_slug:
-            category = get_object_or_404(ProductCategory, slug=category_slug)
-            queryset = queryset.filter(category=category)
+        if category_ids:
+            category_ids = [int(cat_id) for cat_id in category_ids.split(',')]
+            categories = ProductCategory.objects.filter(id__in=category_ids)
+            queryset = queryset.filter(category__in=categories)
 
         return queryset
 
