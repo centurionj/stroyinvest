@@ -69,3 +69,22 @@ document.addEventListener('DOMContentLoaded', function () {
         saveState(); // Сохранение состояния перед отправкой формы
     });
 });
+
+
+// функция сброса фильтра
+function resetForm() {
+    const form = document.getElementById('filterForm');
+
+    // Очистка чек-бокса
+    const checkboxes = form.querySelectorAll('input[name="productTypes"]:checked');
+    checkboxes.forEach(checkbox => {
+        checkbox.checked = false;
+    });
+
+    // Удаление параметра из URL
+    const url = window.location.pathname;
+    history.replaceState({}, document.title, url);
+
+    // Перезагрузка стр
+    form.submit();
+}
