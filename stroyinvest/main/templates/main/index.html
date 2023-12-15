@@ -1,11 +1,6 @@
 {% extends "main/base.html" %}
 {% load static %}
 
-{% block head %}
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-{% endblock %}
-
 {% block content %}
 <main>
     <div class="swiper h-[200px] lg:h-[400px]">
@@ -21,23 +16,6 @@
             </div>
         </div>
     </div>
-    <script type="module">
-        import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs'
-
-        new Swiper('.swiper', {
-            loop: true,
-            pagination: {
-                el: '.swiper-pagination',
-            },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-            scrollbar: {
-                el: '.swiper-scrollbar',
-            },
-        });
-    </script>
 
     <section class="w-full flex justify-center">
         <div class="container my-[30px] grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-[30px]">
