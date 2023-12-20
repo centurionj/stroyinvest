@@ -3,6 +3,7 @@ from autoslug import AutoSlugField
 
 
 class Icon(models.Model):
+    """Модель иконки"""
     title = models.CharField('Название иконки', max_length=20)
     icon = models.TextField('Иконка услуги')
 
@@ -15,6 +16,7 @@ class Icon(models.Model):
 
 
 class Service(models.Model):
+    """Модель услуги"""
     photo = models.ImageField('Фото услуги', upload_to='service_photo')
     icon = models.ForeignKey(Icon, on_delete=models.PROTECT, related_name='icons')
     title = models.CharField('Название услуги', max_length=100)

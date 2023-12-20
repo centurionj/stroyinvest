@@ -8,6 +8,6 @@ class ProductStatus(models.TextChoices):
 
 
 class ProductColour(models.TextChoices):
-    """Статусы для товара"""
+    """Цвет фона для статуса товара"""
     BLUE = 'blue', 'Синий'
     GREEN = 'green', 'Зеленый'

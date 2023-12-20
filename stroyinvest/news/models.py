@@ -5,6 +5,7 @@ from autoslug import AutoSlugField
 
 
 class News(models.Model):
+    """Модель новостей"""
     title = models.CharField('Заголовок', max_length=55)
     content = models.TextField('Контент новости')
     date = models.DateTimeField('Дата', null=True, blank=True)
@@ -16,8 +17,7 @@ class News(models.Model):
         ordering = ordering = ['-date']
 
     def save(self, *args, **kwargs):
-        if not self.date:
-            self.date = timezone.now()
+        self.date = timezone.now()
         super(News, self).save(*args, **kwargs)
 
     def __str__(self):

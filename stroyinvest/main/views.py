@@ -4,7 +4,9 @@ from django.views.generic import TemplateView
 from news.models import News
 from service.models import Service
 
+
 class IndexView(TemplateView):
+    """Клас отображения индексной страницы"""
     template_name = 'main/index.html'
 
     def get_context_data(self, *, object_list=None, **kwargs):
@@ -15,7 +17,10 @@ class IndexView(TemplateView):
 
 
 def contacts(request):
+    """Отображение страницы контактов"""
     return render(request, 'main/contacts.html')
 
+
 def about_us(request):
+    """Отображение страницы о нас"""
     return render(request, 'main/about-us.html')

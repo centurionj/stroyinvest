@@ -1,11 +1,9 @@
 from django.contrib import admin
-from django.db import models
-from django.utils.safestring import mark_safe
-
-from ckeditor.widgets import CKEditorWidget
 
 # from products.models import Brand, ProductCategory, Product
 from products.models import ProductCategory, Product
+from common.admin import ImagePreviewMixin, CKMixin
+
 
 # @admin.register(Brand)
 # class BrandAdmin(admin.ModelAdmin):
@@ -18,12 +16,12 @@ class ProductCategoryAdmin(admin.ModelAdmin):
 
 
 @admin.register(Product)
-class ProductAdmin(admin.ModelAdmin):
+class ProductAdmin(ImagePreviewMixin, CKMixin, admin.ModelAdmin):
     # list_display = ('title', 'status', 'price', 'articul', 'brand')
     list_display = ('title', 'status', 'category')
     fields = [
         'photo',
-        'photo_preview',
+        'image_preview',
         'title',
         'description',
         'status',
@@ -36,13 +34,4 @@ class ProductAdmin(admin.ModelAdmin):
     ]
     # search_fields = ('title', 'articul', 'brand')
     search_fields = ('title', 'articul')
-    readonly_fields = ['photo_preview']
-
-    formfield_overrides = {
-        models.TextField: {'widget': CKEditorWidget},
-    }
-
-    def photo_preview(self, obj):
-        return mark_safe(f'<img src="{obj.photo.url}" style="max-height: 200px;">')
-
-    photo_preview.short_description = 'Фото услуги'
+    readonly_fields = ['image_preview']

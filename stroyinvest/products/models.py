@@ -8,6 +8,7 @@ from service.models import Service
 
 
 # class Brand(models.Model):
+#     """Модель для брэнда товара"""
 #     title = models.CharField('Название брэнда', max_length=55)
 #
 #     class Meta:
@@ -19,6 +20,7 @@ from service.models import Service
 
 
 class ProductCategory(models.Model):
+    """Модель категории"""
     title = models.CharField('Категория товара', max_length=55)
 
     class Meta:
@@ -30,6 +32,7 @@ class ProductCategory(models.Model):
 
 
 class Product(models.Model):
+    """Модель продукта"""
     photo = models.ImageField('Фото товара', upload_to='products_photo')
     title = models.CharField('Название товара', max_length=255)
     description = models.TextField('Описание товара')
@@ -60,6 +63,13 @@ class Product(models.Model):
         null=True, blank=True
     )
 
+    def _check_status(self):
+        """Проверка статуса товара и установка цвета фона"""
+        if self.status == ProductStatus.IN_STOCK:
+            self.colour = ProductColour.GREEN
+        else:
+            self.colour = ProductColour.BLUE
+
     class Meta:
         verbose_name_plural = 'Товары'
         verbose_name = 'Товар'
@@ -68,9 +78,5 @@ class Product(models.Model):
         return self.title
 
     def save(self, *args, **kwargs):
-        if self.status == ProductStatus.IN_STOCK:
-            self.colour = ProductColour.GREEN
-        else:
-            self.colour = ProductColour.BLUE
-
+        self._check_status()
         super(Product, self).save(*args, **kwargs)

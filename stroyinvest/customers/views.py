@@ -9,7 +9,7 @@ from customers.tasks import send_question_task
 
 
 class QuestionCreateView(APIView):
-    """Отправка запросов на обратную связь."""
+    """Создание заявки (вопроса на сайте)."""
 
     permission_classes = [AllowAny]
 
