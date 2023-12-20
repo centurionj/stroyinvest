@@ -9,7 +9,7 @@ class ImagePreviewMixin:
     """Миксин для отображения картинок в админке"""
 
     def image_preview(self, obj):
-        return mark_safe(f'<img src="{obj.image.url}" style="max-height: 200px;">')
+        return mark_safe(f'<img src="{obj.photo.url}" style="max-height: 200px;">')
 
     image_preview.short_description = 'Фотография предпросмотр'
 
