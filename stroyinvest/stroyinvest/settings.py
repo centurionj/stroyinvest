@@ -13,7 +13,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = get_random_secret_key()
 
 
-DEBUG = True
+DEBUG = os.getenv('DEBUG'),
 
 ALLOWED_HOSTS = ['*']
 
@@ -158,10 +158,8 @@ EMAIL_RESIVER = os.getenv('EMAIL_RESIVER') # получатель для зая�
 # Настройки для сессии
 
 SESSION_ENGINE = 'django.contrib.sessions.backends.signed_cookies'
-SESSION_COOKIE_NAME = 'my_session'
+SESSION_COOKIE_NAME = 'stroyinvest'
 SESSION_COOKIE_AGE = 30 * 24 * 3600  # для админки
 SESSION_EXPIRE_SECONDS = 3600  # для обычных пользователей
-SESSION_COOKIE_SECURE = False  # для использования HTTPS (True)
-SESSION_COOKIE_HTTPONLY = True
 SESSION_SAVE_EVERY_REQUEST = True
 SESSION_COOKIE_SAMESITE = 'Lax'
