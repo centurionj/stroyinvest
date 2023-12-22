@@ -16,7 +16,7 @@ SECRET_KEY = get_random_secret_key()
 DEBUG = os.getenv('DEBUG'),
 
 ALLOWED_HOSTS = ['*']
-CSRF_TRUSTED_ORIGINS=[os.getenv('SITE_URL'), 'http://localhost']
+CSRF_TRUSTED_ORIGINS=[os.getenv('DOMAIN'), 'http://localhost']
 
 
 # Application definition
