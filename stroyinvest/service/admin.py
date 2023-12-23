@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.utils.html import format_html
 
 from service.models import Icon, Service
-from common.admin import ImagePreviewMixin, IconDisplayMixin, CKMixin
+from common.admin_mixin import ImagePreviewMixin, IconDisplayMixin, CKMixin
 
 
 @admin.register(Icon)

@@ -1,15 +1,9 @@
 from django.contrib import admin
-from django.db import models
 
-from ckeditor.widgets import CKEditorWidget
-
+from common.admin_mixin import CKMixin
 from news.models import News
 
 
 @admin.register(News)
-class NewsAdmin(admin.ModelAdmin):
+class NewsAdmin(CKMixin, admin.ModelAdmin):
     list_display = ('title', 'date')
-
-    formfield_overrides = {
-        models.TextField: {'widget': CKEditorWidget},
-    }

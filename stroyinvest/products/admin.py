@@ -2,7 +2,7 @@ from django.contrib import admin
 
 # from products.models import Brand, ProductCategory, Product
 from products.models import ProductCategory, Product
-from common.admin import ImagePreviewMixin, CKMixin
+from common.admin_mixin import ImagePreviewMixin, CKMixin
 
 
 # @admin.register(Brand)

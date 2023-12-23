@@ -37,7 +37,7 @@ services:
   nginx:
     build:
       context: .
-      dockerfile: ./stroyinvest/nginx/Dockerfile.nginx
+      dockerfile: stroyinvest/deploy/Dockerfile.nginx
     restart: always
     volumes:
       - static_volume:/app/static/
