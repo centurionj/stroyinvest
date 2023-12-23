@@ -22,7 +22,7 @@ function submitForm() {
 
     if (hasErrors) return;
 
-    const url = '/customers/api/v1/question/create/';
+    const url = 'api/v1/customers/question_create/';
 
     fetch(url, {
         method: 'POST',

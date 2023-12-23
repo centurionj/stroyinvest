@@ -2,22 +2,19 @@ import os
 from pathlib import Path
 
 from django.core.management.utils import get_random_secret_key
+
 from dotenv import load_dotenv
 
-
 load_dotenv()
-
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = get_random_secret_key()
 
-
 DEBUG = os.getenv('DEBUG'),
 
 ALLOWED_HOSTS = ['*']
-CSRF_TRUSTED_ORIGINS=[os.getenv('DOMAIN'), 'http://localhost']
-
+CSRF_TRUSTED_ORIGINS = [os.getenv('DOMAIN'), 'http://localhost']
 
 # Application definition
 
@@ -30,6 +27,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'rest_framework',
+    'drf_yasg',
     'ckeditor',
     'ckeditor_uploader',
 
@@ -71,7 +69,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'stroyinvest.wsgi.application'
 
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -82,7 +79,6 @@ DATABASES = {
         'PORT': os.getenv('DB_PORT'),
     }
 }
-
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -99,7 +95,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 LANGUAGE_CODE = 'ru'
 
 TIME_ZONE = 'Asia/Vladivostok'
@@ -107,7 +102,6 @@ TIME_ZONE = 'Asia/Vladivostok'
 USE_I18N = True
 
 USE_TZ = True
-
 
 STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
@@ -141,9 +135,9 @@ REDIS_PORT = os.getenv('REDIS_PORT')
 
 CELERY_BROKER_URL = 'redis://{}:{}/0'.format(os.getenv('REDIS_HOST'), os.getenv('REDIS_PORT'))
 CELERY_RESULT_BACKEND = 'redis://{}:{}/0'.format(os.getenv('REDIS_HOST'), os.getenv('REDIS_PORT'))
-CELERY_IMPORTS = ('customers.tasks', )
+CELERY_IMPORTS = ('customers.tasks',)
 
-#mail
+# mail
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.mail.ru'
@@ -154,7 +148,7 @@ EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
 SERVER_EMAIL = EMAIL_HOST_USER
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
-EMAIL_RESIVER = os.getenv('EMAIL_RESIVER') # получатель для заявок
+EMAIL_RESIVER = os.getenv('EMAIL_RESIVER')  # получатель для заявок
 
 # Настройки для сессии
 
@@ -170,3 +164,8 @@ SESSION_COOKIE_SAMESITE = 'Lax'
 # домен
 
 DOMAIN = os.getenv('DOMAIN')
+
+# Админка
+
+ADMIN_SITE_HEADER = 'ООО «СТРОЙИНВЕСТ»'
+ADMIN_SITE_TITLE = 'ООО «СТРОЙИНВЕСТ»'

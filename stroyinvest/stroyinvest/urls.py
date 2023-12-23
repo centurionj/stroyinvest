@@ -11,7 +11,7 @@ urlpatterns = [
     path('service/', include('service.urls')),
     path('products/', include('products.urls')),
     path('documents/', include('documents.urls')),
-    path('customers/', include('customers.urls')),
+    path('api/', include('api.urls')),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
