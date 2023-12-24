@@ -1,12 +1,10 @@
 {% extends "main/base.html" %}
 {% load static %}
-{% load domain_settings_tags %}
-{% get_domain_settings as domain_settings %}
 
 {% block head %}
 <meta property="og:title" content="Купить бензин онлайн от Стройинвест">
 <meta property="og:description" content="Купите высококачественный бензин онлайн от Стройинвест. Широкий выбор видов бензина с быстрой и удобной доставкой.">
-<meta property="og:image" content="{{domain_settings.DOMAIN}}{% static 'main/images/index_1.jpeg' %}">
+<meta property="og:image" content="{{ domain }}{% static 'main/images/index_1.jpeg' %}">
 {% endblock %}
 
 {% block content %}

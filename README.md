@@ -16,6 +16,9 @@ docker-compose up --build
 ```shell
 npm run watch
 ```
+```shell
+python manage.py collectstatic
+```
 
 ## Пример дизайна
 
