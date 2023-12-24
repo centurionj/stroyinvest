@@ -1,10 +1,12 @@
 {% extends "main/base.html" %}
 {% load static %}
+{% load domain_settings_tags %}
+{% get_domain_settings as domain_settings %}
 
 {% block head %}
 <meta property="og:title" content="Стройинвест: {{service.title}}">
 <meta property="og:description" content="{{service.description|safe|striptags|slice:':250'}}">
-<meta property="og:image" content="https://stroyinvest.ru{{product.photo.url}}">
+<meta property="og:image" content="{{domain_settings.DOMAIN}}{{product.photo.url}}">
 {% endblock %}
 
 {% block content %}
