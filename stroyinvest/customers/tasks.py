@@ -19,11 +19,10 @@ def send_question_task(question_id):
         f'Телефон отправителя: {question_instance.phone}\n'
         f'Почта отправителя: {question_instance.email}'
     )
-    recipient_list = [settings.EMAIL_HOST_USER]
 
     send_mail(
         user_subject,
         user_message,
         settings.EMAIL_HOST_USER,
-        recipient_list
+        [settings.EMAIL_RECEIVER]
     )

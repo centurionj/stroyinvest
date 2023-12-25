@@ -7,6 +7,7 @@ from api.v1.customers.serializer import QuestionSerializer
 from customers.tasks import send_question_task
 from customers.models import Question
 
+
 class QuestionViewSet(ModelViewSet):
     """Вью-сет заявки (вопроса на сайте)."""
 

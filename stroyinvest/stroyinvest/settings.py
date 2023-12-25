@@ -32,7 +32,6 @@ INSTALLED_APPS = [
     'ckeditor_uploader',
 
     'customers',
-    'documents',
     'main',
     'news',
     'products',
@@ -62,8 +61,6 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-
-                'stroyinvest.context_processors.seo_domain',
             ],
         },
     },
@@ -99,7 +96,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'ru'
 
-TIME_ZONE = 'Asia/Vladivostok'
+TIME_ZONE = os.getenv('TIME_ZONE')
 
 USE_I18N = True
 
@@ -141,7 +138,11 @@ REDIS_PORT = os.getenv('REDIS_PORT')
 
 CELERY_BROKER_URL = 'redis://{}:{}/0'.format(os.getenv('REDIS_HOST'), os.getenv('REDIS_PORT'))
 CELERY_RESULT_BACKEND = 'redis://{}:{}/0'.format(os.getenv('REDIS_HOST'), os.getenv('REDIS_PORT'))
-CELERY_IMPORTS = ('customers.tasks',)
+CELERY_IMPORTS = ('customers.tasks', )
+CELERY_ACCEPT_CONTENT = ['json']
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_SERIALIZER = 'json'
+CELERY_TIMEZONE = TIME_ZONE
 
 # mail
 
@@ -154,7 +155,7 @@ EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
 SERVER_EMAIL = EMAIL_HOST_USER
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
-EMAIL_RESIVER = os.getenv('EMAIL_RESIVER')  # получатель для заявок
+EMAIL_RECEIVER = os.getenv('EMAIL_RECEIVER')  # получатель для заявок
 
 # Настройки для сессии
 
@@ -166,10 +167,6 @@ SESSION_COOKIE_SECURE = False  # для использования HTTPS (True)
 SESSION_COOKIE_HTTPONLY = True  # закрыл доступ к cookie через JS
 SESSION_SAVE_EVERY_REQUEST = True  # для сохранения сессии при перемещении на сайте
 SESSION_COOKIE_SAMESITE = 'Lax'
-
-# домен
-
-DOMAIN = os.getenv('DOMAIN')
 
 # Админка
 
