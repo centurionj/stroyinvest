@@ -10,8 +10,9 @@ services:
     depends_on:
       - postgres
       - redis
+    restart: always
     environment:
-      - TZ=Asia/Vladivostok
+      - TZ=${TIME_ZONE}
     env_file:
       - .env
     volumes:
@@ -20,10 +21,11 @@ services:
 
   postgres:
     image: postgres:latest
+    restart: always
     environment:
-      - POSTGRES_DB=stroyinvest
-      - POSTGRES_USER=stroyinvest
-      - POSTGRES_PASSWORD=stroyinvest
+      - POSTGRES_DB=${DB_NAME}
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
     ports:
       - "15432:5432"
     volumes:
@@ -31,6 +33,7 @@ services:
 
   redis:
     image: redis:latest
+    restart: always
     ports:
       - "6379:6379"
 

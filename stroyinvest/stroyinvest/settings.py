@@ -111,7 +111,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 # CKEditor настройки
 
 CKEDITOR_JQUERY_URL = 'https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'
-CKEDITOR_UPLOAD_PATH = 'uploads/'
+CKEDITOR_UPLOAD_PATH = '/uploads/'
 
 CKEDITOR_CONFIGS = {
     'default': {
