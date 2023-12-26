@@ -3,8 +3,8 @@ venv/
 env/
 
 # медиа файлы
-./stroyinvest/media/
-./stroyinvest/media_volume/
+/media/
+/media_volume/
 
 # локальные настройки
 local_settings.py
@@ -21,3 +21,4 @@ __pycache__/
 
 # Файлы окружения
 .env
+
