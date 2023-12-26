@@ -2,8 +2,9 @@
 venv/
 env/
 
-media/
-node_modules/
+# медиа файлы
+./stroyinvest/media/
+./stroyinvest/media_volume/
 
 # локальные настройки
 local_settings.py

@@ -17,7 +17,7 @@ services:
       - .env
     volumes:
       - static_volume:/app/static/
-      - media_volume:/app/media/
+      - ./stroyinvest/media_volume:/app/media/
 
   postgres:
     image: postgres:latest
@@ -40,13 +40,13 @@ services:
   nginx:
     build:
       context: .
-      dockerfile: stroyinvest/deploy/Dockerfile.nginx
+      dockerfile: ./stroyinvest/deploy/Dockerfile.nginx
     restart: always
     ports:
       - "80:80"
     volumes:
       - static_volume:/app/static/
-      - media_volume:/app/media/
+      - ./stroyinvest/media_volume:/app/media/
     depends_on:
       - web
 
