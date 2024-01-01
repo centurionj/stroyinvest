@@ -3,10 +3,7 @@ function submitForm() {
     const checkboxes = form.querySelectorAll('input[name="productTypes"]:checked');
     const productTypes = Array.from(checkboxes).map(checkbox => checkbox.value).join(',');
 
-    const sortSelect = document.getElementById('sortSelect');
-    const sortValue = sortSelect.value;
-
-    const queryParams = `?productTypes=${productTypes}&sort=${sortValue}`;
+    const queryParams = `?productTypes=${productTypes}`;
     const url = window.location.pathname + queryParams;
 
     window.location.href = url;
@@ -33,13 +30,6 @@ function setInitialState() {
             }
         });
     }
-
-    // Восстановление состояния сортировки
-    const sortParam = getQueryParam('sort');
-    if (sortParam) {
-        const sortSelect = document.getElementById('sortSelect');
-        sortSelect.value = sortParam;
-    }
 }
 
 // Функция для сохранения состояния чекбоксов и сортировки в localStorage
@@ -48,18 +38,15 @@ function saveState() {
     const checkboxes = form.querySelectorAll('input[name="productTypes"]:checked');
     const productTypes = Array.from(checkboxes).map(checkbox => checkbox.value);
 
-    const sortSelect = document.getElementById('sortSelect');
-    const sortValue = sortSelect.value;
 
     // Сохранение в localStorage
     localStorage.setItem('productTypes', JSON.stringify(productTypes));
-    localStorage.setItem('sortValue', sortValue);
 }
 
 // Функция для загрузки состояния чекбоксов и сортировки из localStorage
 function loadState() {
     const productTypes = JSON.parse(localStorage.getItem('productTypes')) || [];
-    const sortValue = localStorage.getItem('sortValue');
+    // const sortValue = localStorage.getItem('sortValue');
 
     const form = document.getElementById('filterForm');
 
@@ -70,12 +57,6 @@ function loadState() {
             checkbox.checked = true;
         }
     });
-
-    // Восстановление состояния сортировки
-    const sortSelect = document.getElementById('sortSelect');
-    if (sortValue) {
-        sortSelect.value = sortValue;
-    }
 }
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -87,10 +68,23 @@ document.addEventListener('DOMContentLoaded', function () {
     form.addEventListener('submit', function () {
         saveState(); // Сохранение состояния перед отправкой формы
     });
-
-    // Обработка события изменения значения сортировки
-    const sortSelect = document.getElementById('sortSelect');
-    sortSelect.addEventListener('change', function () {
-        submitForm(); // Вызов submitForm при изменении значения сортировки
-    });
 });
+
+
+// функция сброса фильтра
+function resetForm() {
+    const form = document.getElementById('filterForm');
+
+    // Очистка чек-бокса
+    const checkboxes = form.querySelectorAll('input[name="productTypes"]:checked');
+    checkboxes.forEach(checkbox => {
+        checkbox.checked = false;
+    });
+
+    // Удаление параметра из URL
+    const url = window.location.pathname;
+    history.replaceState({}, document.title, url);
+
+    // Перезагрузка стр
+    form.submit();
+}

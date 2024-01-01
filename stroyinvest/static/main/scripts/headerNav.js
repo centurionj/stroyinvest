@@ -1,4 +1,5 @@
-const headerBurger = document.querySelector('#js-header-burger');
+const headerOpenBurger = document.querySelector('#js-header-open-burger');
+const headerCloseBurger = document.querySelector('#js-header-close-burger');
 const headerMenu = document.querySelector('#js-header-menu');
 
 const onBurgerClickCallback = () => {
@@ -6,7 +7,11 @@ const onBurgerClickCallback = () => {
 };
 
 const headerNav = () => {
-    headerBurger.addEventListener('click', onBurgerClickCallback);
+    headerOpenBurger.addEventListener('click', onBurgerClickCallback);
+    headerCloseBurger.addEventListener('click', onBurgerClickCallback);
+    document.addEventListener('resize', () => {
+        headerMenu.classList.remove('hidden');
+    });
 };
 
 headerNav();
