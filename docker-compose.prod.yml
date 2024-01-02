@@ -11,8 +11,6 @@ services:
       - postgres
       - redis
     restart: always
-    environment:
-      - TZ=${TIME_ZONE}
     env_file:
       - .env
     volumes:
@@ -27,7 +25,7 @@ services:
       - POSTGRES_USER=${DB_USER}
       - POSTGRES_PASSWORD=${DB_PASSWORD}
     ports:
-      - "15432:5432"
+      - "5432:5432"
     volumes:
       - ./stroyinvest/pg_data:/var/lib/postgresql/data/
 
@@ -37,10 +35,23 @@ services:
     ports:
       - "6379:6379"
 
+  celery:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: celery -A stroyinvest worker -l info
+    env_file:
+      - .env
+    depends_on:
+      - postgres
+      - redis
+      - web
+
   nginx:
     build:
       context: .
       dockerfile: stroyinvest/deploy/Dockerfile.nginx
+    command: nginx -g 'daemon off;'
     restart: always
     volumes:
       - static_volume:/app/static/

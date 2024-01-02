@@ -7,16 +7,11 @@ RUN apt-get update && \
     apt-get clean
 
 COPY /requirements.txt /app/requirements.txt
-COPY ./stroyinvest/stroyinvest/celery.py /app/stroyinvest/stroyinvest/celery.py
 
 RUN pip install --upgrade pip && \
     pip install -r requirements.txt
 
-RUN mkdir -p /app/media && \
-    chown -R 1000:1000 /app/media
-
 COPY ./stroyinvest/ /app/
-COPY /stroyinvest/deploy/nginx.conf /etc/nginx/conf.d/default.conf
 
 EXPOSE 8000
 
