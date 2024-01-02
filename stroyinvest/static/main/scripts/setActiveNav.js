@@ -1,4 +1,4 @@
-const activeSelectors = ['!bg-blue1', 'hover:!bg-blue1-hover', 'text-white'];
+const activeSelectors = ['!bg-blue1', 'hover:!bg-blue1-hover', 'text-white', 'border-[1px]'];
 
 const navSelectorsEnums = {
     index: '#js-index',
@@ -13,11 +13,17 @@ const navSelectorsEnums = {
 const linksEnums = {
     '/': 'index',
     '/products': 'products',
+    '/products/': 'products',
     '/service': 'service',
+    '/service/': 'service',
     '/news': 'news',
+    '/news/': 'news',
     '/contacts': 'contacts',
+    '/contacts/': 'contacts',
     '/about-us': 'about-us',
+    '/about-us/': 'about-us',
     '/documents': 'documents',
+    '/documents/': 'documents',
 };
 
 const setActiveNav = () => {
