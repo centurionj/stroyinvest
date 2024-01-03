@@ -10,6 +10,7 @@
 - Redis
 - Docker
 - Docker-compose
+- Swagger
 - SEO
 - HTML
 - CSS
@@ -62,6 +63,10 @@ npm run watch
 ```shell
 python manage.py collectstatic
 ```
+
+### Документация к api
+
+http://localhost:8000/api/v1/swagger/
 
 ## Пример дизайна
 
