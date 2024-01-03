@@ -5,6 +5,7 @@
 ## Технологический стек
 - Python 3.10
 - Django 4.2.7
+- PostgreSQL
 - Celery
 - Redis
 - Docker
