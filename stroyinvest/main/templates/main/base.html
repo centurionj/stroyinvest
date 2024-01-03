@@ -45,9 +45,9 @@
                 <span>&times;</span>
             </div>
             <a href="{% url 'index' %}" class="bg-white hover:bg-gray-1 px-[15px] py-[7px] rounded-[5px] w-auto" id="js-index">Главная</a>
-            <a href="/products" class="bg-white hover:bg-gray-1 px-[15px] py-[7px] rounded-[5px] w-auto" id="js-products">Товары</a>
-            <a href="/service" class="bg-white hover:bg-gray-1 px-[15px] py-[7px] rounded-[5px] w-auto" id="js-service">Услуги</a>
-            <a href="/news" class="bg-white hover:bg-gray-1 px-[15px] py-[7px] rounded-[5px] w-auto" id="js-news">Новости</a>
+            <a href="{% url 'products' %}" class="bg-white hover:bg-gray-1 px-[15px] py-[7px] rounded-[5px] w-auto" id="js-products">Товары</a>
+            <a href="{% url 'services' %}" class="bg-white hover:bg-gray-1 px-[15px] py-[7px] rounded-[5px] w-auto" id="js-service">Услуги</a>
+            <a href="{% url 'vacancies' %}" class="bg-white hover:bg-gray-1 px-[15px] py-[7px] rounded-[5px] w-auto" id="js-news">Вакансии</a>
             <a href="/contacts" class="bg-white hover:bg-gray-1 px-[15px] py-[7px] rounded-[5px] w-auto" id="js-contacts">Контакты</a>
             <a href="/about-us" class="bg-white hover:bg-gray-1 px-[15px] py-[7px] rounded-[5px] w-auto" id="js-about-us">О нас</a>
         </nav>
@@ -64,7 +64,7 @@
 <div class="w-full bg-blue1 flex items-center flex-col">
     <footer class="py-[30px] container flex justify-between items-start gap-[20px] lg:flex-row flex-col">
         <div class="flex flex-col lg:w-[calc(50%-10px)] w-full gap-[20px] lg:items-start items-center">
-            <span class="text-[14px] text-white">© {% now "Y" %} ООО "Стройинвест"</span>
+            <span class="text-[14px] text-white">© 2010 — {% now "Y" %} ООО "Стройинвест"</span>
             <span class="text-[14px] text-white">680038, г. Хабаровск, ул. Лермонтова, 52, оф. 19</span>
         </div>
         <div class="flex flex-col lg:w-auto w-full gap-[20px] lg:items-start items-center">

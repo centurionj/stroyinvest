@@ -102,45 +102,5 @@
             <script src="{% static 'main/scripts/indexModal.js' %}"></script>
         </div>
     </section>
-
-    <section class="w-full flex justify-center">
-        <div class="container mb-[30px]">
-            <div class="w-full flex justify-between items-start lg:flex-row flex-col">
-
-                <div class="w-full lg:w-[calc(100%/2-20px)]">
-                    <h2 class="text-2xl font-semibold mb-4">О компании</h2>
-                    <p class="text-gray-700 mb-2">
-                        ООО "Стройинвест" основано в 2010 году...
-                    </p>
-                    <a href="{% url 'about-us' %}" class="text-white bg-blue1 px-[15px] py-[7px] rounded-[5px]">Узнать больше</a>
-                </div>
-
-
-                <div class="w-full lg:w-[calc(100%/2-20px)] lg:mt-0 mt-[30px]">
-                    <h2 class="text-2xl font-semibold mb-4">Последние новости</h2>
-                    {% if news %}
-                    {% for n in news %}
-                    <div class="mb-4">
-                        <h3 class="text-lg font-semibold mb-2">{{n.title}}</h3>
-                        <p class="text-gray-700 mb-2">
-                            {{n.content|safe|striptags|slice:":30"}}...
-                        </p>
-                        <a href="{% url 'news_detail' news_slug=n.slug %}" class="text-blue-500">Читать далее</a>
-                    </div>
-                    {% endfor %}
-
-                    <div class="mt-4">
-                        <a href="{% url 'news' %}" class="text-white bg-blue1 px-[15px] py-[7px] rounded-[5px]">Все новости</a>
-                    </div>
-                    {% else %}
-                    <div class="mb-4">
-                        <p class="text-gray-700 mb-2"> Новости скоро появятся</p>
-                    </div>
-                    {% endif %}
-                </div>
-
-            </div>
-        </div>
-    </section>
 </main>
 {% endblock %}

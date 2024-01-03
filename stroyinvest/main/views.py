@@ -1,7 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView
 
-from news.models import News
 from service.models import Service
 
 
@@ -11,8 +10,7 @@ class IndexView(TemplateView):
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super(IndexView, self).get_context_data()
-        context['services'] = Service.objects.all().filter
-        context['news'] = News.objects.all()
+        context['services'] = Service.objects.all()
         return context
 
 

@@ -34,7 +34,7 @@ INSTALLED_APPS = [
 
     'customers',
     'main',
-    'news',
+    'vacancies',
     'products',
     'service',
 ]

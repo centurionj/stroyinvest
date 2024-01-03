@@ -38,7 +38,7 @@
                     <div class="pb-[4px]">
                         <h2 class="text-xl font-semibold mb-2">{{service.title}}</h2>
                         <div class="text-gray-500 mb-4">
-                            {{service.description|safe|striptags|slice:":650"}}...
+                            {{service.description|safe|striptags|slice:":550"}}...
                         </div>
                         <a class="bg-blue1 hover:bg-blue1-hover text-white px-4 py-2 rounded"
                            href="{% url 'service-detail' service_slug=service.slug %}">Подробнее</a>
