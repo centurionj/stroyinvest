@@ -8,6 +8,7 @@ const navSelectorsEnums = {
     contacts: '#js-contacts',
     'about-us': '#js-about-us',
     documents: '#js-documents',
+    vacancies: '#js-vacancies',
 };
 
 const linksEnums = {
@@ -24,6 +25,8 @@ const linksEnums = {
     '/about-us/': 'about-us',
     '/documents': 'documents',
     '/documents/': 'documents',
+    '/vacancies': 'vacancies',
+    '/vacancies/': 'vacancies',
 };
 
 const setActiveNav = () => {
