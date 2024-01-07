@@ -4,15 +4,17 @@ from django.views.generic.detail import DetailView
 
 from service.models import Service
 from products.models import Product
+from common.view_mixin import TitleListMixin, TitleDetailMixin
 
 
-class ServiceListView(ListView):
+class ServiceListView(TitleListMixin, ListView):
     """Список всех услуг"""
     model = Service
     template_name = 'service/services.html'
+    title = 'Стройинвест - услуги'
 
 
-class ServiceDetailView(DetailView):
+class ServiceDetailView(TitleDetailMixin, DetailView):
     """Детальный просмотр"""
     template_name = 'service/service.html'
     model = Service

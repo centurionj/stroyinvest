@@ -3,15 +3,17 @@ from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 
 from vacancies.models import Vacancies
+from common.view_mixin import TitleListMixin, TitleDetailMixin
 
 
-class VacanciesListView(ListView):
+class VacanciesListView(TitleListMixin, ListView):
     """Список всех новостей"""
     model = Vacancies
     template_name = 'vacancies/vacancies.html'
+    title = 'Стройинвест - вакансии'
 
 
-class VacancyDetailView(DetailView):
+class VacancyDetailView(TitleDetailMixin, DetailView):
     """Детальный просмотр"""
     template_name = 'vacancies/vacancy_detail.html'
     model = Vacancies

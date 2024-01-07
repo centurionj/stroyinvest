@@ -12,7 +12,6 @@ class QuestionViewSet(ModelViewSet):
     """Вью-сет заявки (вопроса на сайте)."""
 
     permission_classes = [AllowAny]
-
     queryset = Question.objects.all()
     serializer_class = QuestionSerializer
 

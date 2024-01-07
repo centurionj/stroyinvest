@@ -1,14 +1,16 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import get_object_or_404
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 
 from products.models import Product, ProductCategory
+from common.view_mixin import TitleListMixin, TitleDetailMixin
 
 
-class ProductsListView(ListView):
+class ProductsListView(TitleListMixin, ListView):
     """Список всех продуктов"""
     model = Product
     template_name = 'products/products.html'
+    title = 'Стройинвест - продукты'
 
     def get_queryset(self):
         queryset = super().get_queryset()
@@ -27,7 +29,7 @@ class ProductsListView(ListView):
         return context
 
 
-class ProductsDetailView(DetailView):
+class ProductsDetailView(TitleDetailMixin, DetailView):
     """Детальный просмотр"""
     template_name = 'products/product.html'
     model = Product

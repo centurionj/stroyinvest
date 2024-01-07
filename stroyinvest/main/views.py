@@ -2,11 +2,13 @@ from django.shortcuts import render
 from django.views.generic import TemplateView
 
 from service.models import Service
+from common.view_mixin import TitleListMixin
 
 
-class IndexView(TemplateView):
+class IndexView(TitleListMixin, TemplateView):
     """Клас отображения индексной страницы"""
     template_name = 'main/index.html'
+    title = 'Стройинвест - главная'
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super(IndexView, self).get_context_data()
