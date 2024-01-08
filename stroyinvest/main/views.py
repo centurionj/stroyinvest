@@ -1,3 +1,4 @@
+from django.http import HttpResponse
 from django.shortcuts import render
 from django.views.generic import TemplateView
 
@@ -24,3 +25,12 @@ def contacts(request):
 def about_us(request):
     """Отображение страницы о нас"""
     return render(request, 'main/about-us.html')
+
+
+def favicon_view(request):
+    favicon_path = 'main/static/main/images/favicon/favicon.ico'
+
+    with open(favicon_path, 'rb') as f:
+        favicon_content = f.read()
+
+    return HttpResponse(favicon_content, content_type='image/x-icon')
