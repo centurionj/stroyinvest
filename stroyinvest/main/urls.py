@@ -1,10 +1,11 @@
 from django.urls import path, include
 
-from . import views
+from main.views import IndexView, contacts, about_us
 
 urlpatterns = [
-    path('', views.IndexView.as_view(), name='index'),
-    path('contacts', views.contacts, name='contacts'),
-    path('about-us', views.about_us, name='about-us'),
-    path('products', include('products.urls')),
+    path('', IndexView.as_view(), name='index'),
+    path('contacts/', contacts, name='contacts'),
+    path('about-us/', about_us, name='about-us'),
+
+    path('', include('seo.urls')),
 ]

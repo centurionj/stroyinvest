@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'vacancies',
     'products',
     'service',
+    'seo',
 ]
 
 MIDDLEWARE = [
@@ -173,3 +174,7 @@ SESSION_COOKIE_SAMESITE = 'Lax'
 
 ADMIN_SITE_HEADER = 'ООО «СТРОЙИНВЕСТ»'
 ADMIN_SITE_TITLE = 'ООО «СТРОЙИНВЕСТ»'
+
+# Домен для сео
+
+DOMAIN = os.getenv('DOMAIN')

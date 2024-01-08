@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+   <url>
+      <loc>{{request.scheme}}://{{request.get_host}}</loc>
+      <changefreq>weekly</changefreq>
+      <priority>1.0</priority>
+   </url>
+
+   <url>
+      <loc>{{request.scheme}}://{{request.get_host}}{% url 'contacts' %}</loc>
+      <changefreq>weekly</changefreq>
+      <priority>1.0</priority>
+   </url>
+
+   <url>
+      <loc>{{request.scheme}}://{{request.get_host}}{% url 'about-us' %}</loc>
+      <changefreq>weekly</changefreq>
+      <priority>1.0</priority>
+   </url>
+
+   <url>
+      <loc>{{request.scheme}}://{{request.get_host}}{% url 'products' %}</loc>
+      <changefreq>weekly</changefreq>
+      <priority>1.0</priority>
+   </url>
+
+   {% for obj in products %}
+   <url>
+      <loc>{{request.scheme}}://{{request.get_host}}{{obj.get_absolute_url}}</loc>
+      <changefreq>weekly</changefreq>
+      <priority>1.0</priority>
+   </url>
+   {% endfor %}
+
+   <url>
+      <loc>{{request.scheme}}://{{request.get_host}}{% url 'services' %}</loc>
+      <changefreq>weekly</changefreq>
+      <priority>1.0</priority>
+   </url>
+
+   {% for obj in services %}
+   <url>
+      <loc>{{request.scheme}}://{{request.get_host}}{{obj.get_absolute_url}}</loc>
+      <changefreq>weekly</changefreq>
+      <priority>1.0</priority>
+   </url>
+   {% endfor %}
+
+   <url>
+      <loc>{{request.scheme}}://{{request.get_host}}{% url 'vacancies' %}</loc>
+      <changefreq>weekly</changefreq>
+      <priority>1.0</priority>
+   </url>
+
+   {% for obj in vacancies %}
+   <url>
+      <loc>{{request.scheme}}://{{request.get_host}}{{obj.get_absolute_url}}</loc>
+      <changefreq>weekly</changefreq>
+      <priority>1.0</priority>
+   </url>
+   {% endfor %}
+
+</urlset>

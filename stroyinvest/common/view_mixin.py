@@ -9,9 +9,8 @@ class TitleListMixin:
 
 class TitleDetailMixin:
     """Миксин для заголовка в детальном просмотре"""
-    title = 'Стройинвест - '
 
     def get_context_data(self, **kwargs):
         context = super(TitleDetailMixin, self).get_context_data(**kwargs)
-        context['title'] = f'{self.title}{self.object.title}'
+        context['title'] = f'Стройинвест - {self.object.title}'
         return context

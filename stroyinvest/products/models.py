@@ -1,9 +1,11 @@
 from django.db import models
 
 from autoslug import AutoSlugField
+from django.urls import reverse
 
-from .enums import ProductStatus, ProductColour
+from products.enums import ProductStatus, ProductColour
 from service.models import Service
+from common.model_mixin import ModelMixin
 
 
 class ProductCategory(models.Model):
@@ -18,8 +20,10 @@ class ProductCategory(models.Model):
         return self.title
 
 
-class Product(models.Model):
+class Product(ModelMixin, models.Model):
     """Модель продукта"""
+    url_name = 'product-detail'
+
     photo = models.ImageField('Фото товара', upload_to='products_photo')
     title = models.CharField('Название товара', max_length=255)
     description = models.TextField('Описание товара')
