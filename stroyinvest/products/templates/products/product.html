@@ -6,7 +6,7 @@
 {% block head %}
 <meta property="og:title" content="Стройинвест: {{product.title}}">
 <meta property="og:description" content="Высококачественное топливо от Стройинвест. Широкий выбор топлива (бензин, диз. топливо, керосин, битум, мазут, масла и смазки) с быстрой и удобной доставкой.">
-<meta property="og:image" content="{{request.scheme}}://{{request.get_host}}{{product.photo.url}}">
+<meta property="og:image" content="https://{{request.get_host}}{{product.photo.url}}">
 {% endblock %}
 
 {% block content %}

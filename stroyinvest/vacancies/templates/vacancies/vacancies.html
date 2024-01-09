@@ -6,7 +6,7 @@
 {% block head %}
 <meta property="og:title" content="Открытые вакансии в компанию Стройинвест">
 <meta property="og:description" content="Вакансии Стройинвест Хабаровск">
-<meta property="og:image" content="https://stroyinvestdv.ru{% static 'main/images/index_1.jpeg' %}">
+<meta property="og:image" content="https://{{request.get_host}}{% static 'main/images/index_1.jpeg' %}">
 {% endblock %}
 
 {% block content %}
