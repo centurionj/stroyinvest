@@ -6,7 +6,7 @@
 {% block head %}
 <meta property="og:title" content="Купить/хранить/перевозить топлива от Стройинвест">
 <meta property="og:description" content="Купить топливо Хабаровск и Дальний Восток. Осуществляем хранение топлива на наших нефтебазах, предоставляем стоянку для иногородних. Перевозим топливо">
-<meta property="og:image" content="https://stroyinvestdv.ru{% static 'main/images/index_1.jpeg' %}">
+<meta property="og:image" content="{{request.scheme}}://{{request.get_host}}{% static 'main/images/index_1.jpeg' %}">
 {% endblock %}
 
 {% block content %}
