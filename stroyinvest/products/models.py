@@ -1,7 +1,6 @@
 from django.db import models
 
 from autoslug import AutoSlugField
-from django.urls import reverse
 
 from products.enums import ProductStatus, ProductColour
 from service.models import Service
@@ -44,7 +43,7 @@ class Product(ModelMixin, models.Model):
         null=True, blank=True
     )
 
-    def _check_status(self):
+    def __check_status(self):
         """Проверка статуса товара и установка цвета фона"""
         if self.status == ProductStatus.IN_STOCK:
             self.colour = ProductColour.GREEN
@@ -59,5 +58,6 @@ class Product(ModelMixin, models.Model):
         return self.title
 
     def save(self, *args, **kwargs):
-        self._check_status()
+        self.__check_status()
         super(Product, self).save(*args, **kwargs)
+        self._image_save()
