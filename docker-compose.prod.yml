@@ -34,6 +34,9 @@ services:
     restart: always
     ports:
       - "6379:6379"
+    volumes:
+      - redis_data:/data
+    command: [ "redis-server", "--appendonly", "yes", "--slave-serve-stale-data", "no" ]
 
   celery:
     build:
@@ -75,5 +78,6 @@ volumes:
   pg_data:
   static_volume:
   media_volume:
+  redis_data:
   nginx_data:
   letsencrypt_data:
